@@ -1,5 +1,5 @@
-// Time complexity: o(n)
-// Space complexity: 0
+// Time complexity: O(n)
+// Space complexity: O(1)
 // Leetcode: all test cases passed.
 
 // EXPLANATION:

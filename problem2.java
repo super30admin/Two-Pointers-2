@@ -1,5 +1,5 @@
-// Time complexity: o(n) 
-//space complexity: 0(1)
+// Time complexity: O(n) 
+//space complexity: O(1)
 // missing certain cases in leetcode.
 
 
