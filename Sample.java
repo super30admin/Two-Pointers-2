@@ -35,3 +35,29 @@ class Solution {
         }
     }
 }
+
+// Time Complexity : O(n)
+// Space Complexity : O(1)
+// Did this code successfully run on Leetcode : No, fails for few test cases.
+// Three line explanation of solution in plain english
+To keep atmost 2 occurances of a number, replace the further occurances by a number greater than that number.
+  Keep doing this until the end of the array.
+// Your code here along with comments explaining your approach
+class Solution {
+    public int removeDuplicates(int[] nums) {
+        int k=2;
+        int i=0;
+        while(i<k){
+            i++;
+        }
+        int j=i+1;
+        while(j<nums.length){
+            if(nums[j]>nums[i-k]){
+                nums[i]=nums[j];
+                i++;
+            }
+            j++;
+        }
+        return i;
+    }
+}
