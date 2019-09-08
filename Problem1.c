@@ -59,6 +59,10 @@ int removeDuplicates_ver2(int* nums, int numsSize, int num_of_dup_allowed){
         //printf("Numbers are 0\n");
         return 0;
     }
+    /* Corner case for 1 element */
+    if (numsSize == 1) {
+        return numsSize;
+    }
     /* start from the idx =  number of duplicates count as we are not concerned with those elements as such */
     slow_ptr = num_of_dup_allowed;
 
