@@ -1,8 +1,8 @@
-//Time Complexity
-//Space Complexity
+//Time Complexity - O(n) where n is the number of elements in the matrix
+//Space Complexity - O(1)
 // This solution worked on Leetcode
 // This solution, the optimal way to traverse in the sorted row and column is to start at the first element last row. If the element is greater than the target then it means all the elements in that row will be greater than the target. Hence, we decrement the row(i--)
-If the element is smaller than the target than increment the column to check the next element in the row. 
+//If the element is smaller than the target than increment the column to check the next element in the row. 
 
 
 
