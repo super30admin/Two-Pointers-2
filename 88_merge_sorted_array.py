@@ -40,8 +40,8 @@ class Solution:
         # copy the remaining elements from nums2
         while ptr2 >= 0:
             nums1[k] = nums2[ptr2]
-            k -= 1
             ptr2 -= 1
+            k -= 1
 
 
 if __name__ == '__main__':
