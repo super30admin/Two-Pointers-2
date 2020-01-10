@@ -20,6 +20,10 @@ class Solution:
                       element to the slow pointer and increment slow pointer.
                     - Always increment fast pointer
         """
+        # edge case
+        if not nums:
+            return
+
         # No of duplicates allowed
         k = 2
 
@@ -38,4 +42,5 @@ class Solution:
 if __name__ == '__main__':
     h = Solution()
     print(h.removeDuplicates([1, 1, 1, 2, 2, 3]))
+    print(h.removeDuplicates([1, 1]))
     print(h.removeDuplicates([0, 0, 1, 1, 1, 1, 2, 3, 3]))
