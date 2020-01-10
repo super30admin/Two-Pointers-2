@@ -18,6 +18,11 @@ class Solution:
                 - Traverse both the lists and copy the larger element
                 - If any remaning elements from the second list, copy to the first list.
         """
+
+        # edge case
+        if not nums1 or not nums2 or n == 0:
+            return
+
         k, ptr1, ptr2 = m + n - 1, m - 1, n - 1
         while ptr1 >= 0 and ptr2 >= 0:
             # case 1
