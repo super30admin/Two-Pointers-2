@@ -16,6 +16,7 @@ class Solution {
         while(fast < nums.length){
             
             //if slow and slow+1(fast) is equal
+            //!duplicate => if slow and fast are equal simply increment both
             if(nums[slow] == nums[fast] && !duplicate){
                 duplicate = true;
                 nums[++slow]=nums[fast];

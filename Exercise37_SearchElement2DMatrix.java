@@ -4,7 +4,8 @@
 class Solution {
     public boolean searchMatrix(int[][] matrix, int target) {
         //base case
-        if(matrix == null || matrix.length==0){             //no elements present
+        //no elements present
+        if(matrix == null || matrix.length==0){             
             return false;
         }
         

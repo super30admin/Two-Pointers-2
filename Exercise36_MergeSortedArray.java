@@ -3,6 +3,10 @@
 
 class Solution {
     public void merge(int[] nums1, int m, int[] nums2, int n) {
+
+        //base case
+        if(n == 0) return;
+
         //i: last element of nums1
         //j: last element of nums2
         //k: last element of nums1+nums2 length
@@ -14,6 +18,8 @@ class Solution {
             //else decrement j
             nums1[k--] = nums1[i] > nums2[j] ? nums1[i--] : nums2[j--];
         }
+        //if nums1 is still left with elements
+        //copy the elements in the array and decrement
         while(j >= 0) {
             nums1[k--] = nums2[j--];
         }
