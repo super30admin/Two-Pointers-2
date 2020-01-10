@@ -9,20 +9,31 @@
 
 class Solution {
     public void merge(int[] nums1, int m, int[] nums2, int n) {
-        if( (nums1 == null && nums2 == null) || (nums1.length == 0 && nums2.length == 0))
-            return;
+        if(n == 0) return;
         
-        int cnt = 0;
+        int i = m-1, j = n-1, k = m + n - 1;
         
-        if(nums2.length > 0)
+        while(i >= 0 && j >= 0 && k >= 0)
         {
-            for(int i=m; i < m+n; ++i)
+            if(nums1[i] > nums2[j])
             {
-                nums1[i] = nums2[cnt];
-                cnt++;
+                nums1[k] = nums1[i];
+                --k;
+                --i;
+            }
+            else
+            {
+                nums1[k] = nums2[j];
+                --k;
+                --j;
             }
         }
         
-        Arrays.sort(nums1);
+        while(i < 0 && k >= 0)
+        {
+            nums1[k] = nums2[j];
+            --k;
+            --j;
+        }
     }
 }
