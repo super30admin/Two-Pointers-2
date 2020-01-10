@@ -1,10 +1,8 @@
 // Time Complexity : 
-//      searchMatrix() - O(n*log(n))
-//      binSearch() - O(log(n))
+//      searchMatrix() - O(m + n)
 //      
 // Space Complexity :
 //      searchMatrix() - O(1)
-//      binSearch() - O(1)
 //
 // Did this code successfully run on Leetcode : Yes
 // Any problem you faced while coding this : No
@@ -14,36 +12,21 @@ class Solution {
         if(matrix == null || matrix.length == 0)
             return false;
         
-        boolean flag = false;
+        int m = matrix.length-1;
+        int n = matrix[0].length-1;
         
-        if(matrix[0].length > 0 && matrix[0][0] <= target)
+        int ptr1 = 0;
+        int ptr2 = n;
+        
+        while(ptr1 <=m && ptr2 >= 0)
         {
-            int i = 0;
-            while(i < matrix.length && matrix[i][0] <= target)
-            {
-                flag = flag || binSearch(matrix[i], target);
-                ++i;
-            }
-        }
-        
-        return flag;
-    }
-    
-    private boolean binSearch(int[] arr, int target)
-    {
-        int l = 0, h = arr.length -1;
-        
-        while(l <= h)
-        {
-            int m = l + (h-l) / 2;
-            
-            if(arr[m] == target)
+            if(matrix[ptr1][ptr2] == target)
                 return true;
             
-            else if(arr[m] < target)
-                l = m + 1;
-            else if(arr[m] > target)
-                 h = m-1;
+            else if(matrix[ptr1][ptr2] > target)
+                --ptr2;
+            else
+                ++ptr1;
         }
         
         return false;
