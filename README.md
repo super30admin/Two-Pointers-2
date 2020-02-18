@@ -1,6 +1,6 @@
 # Two-Pointers-2
 
-## Problem1 (https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/)
+## Problem38 (https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/)
 Given a sorted array nums, remove the duplicates in-place such that duplicates appeared at most twice and return the new length.
 
 Do not allocate extra space for another array, you must do this by modifying the input array in-place with O(1) extra memory.
@@ -46,7 +46,7 @@ for (int i = 0; i < len; i++) {
 
 }
 
-## Problem2 (https://leetcode.com/problems/merge-sorted-array/)
+## Problem36 (https://leetcode.com/problems/merge-sorted-array/)
 Given two sorted integer arrays nums1 and nums2, merge nums2 into nums1 as one sorted array.
 
 Note:
@@ -63,7 +63,7 @@ nums2 = [2,5,6],       n = 3
 
 Output: [1,2,2,3,5,6]
 
-## Problem3 (https://leetcode.com/problems/search-a-2d-matrix-ii/)
+## Problem37 (https://leetcode.com/problems/search-a-2d-matrix-ii/)
 Write an efficient algorithm that searches for a value in an m x n matrix. This matrix has the following properties:
 
 Integers in each row are sorted in ascending from left to right.
