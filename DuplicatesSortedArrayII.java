@@ -21,17 +21,17 @@ class Solution {
         boolean flag = false;
         while( fast < nums.length) {
            
-            if( nums[slow] == nums[fast]) {        //case 1 - flag is false, nums[slow] == nums[fast]
-                if(!flag) {
-                    nums[++slow] = nums[fast++];   
-                    flag  = true;
+            if( nums[slow] == nums[fast]) {        //duplicate found
+                if(!flag) {                         //case 1 - flag is false
+                    nums[++slow] = nums[fast++];    //copy element from fast to slow and set flag to true
+                    flag  = true; 
                 }
-                else {
+                else {                              // 2 duplicates already copied, so increment fast till duplicates aren't found
                     while(fast < nums.length && nums[fast] == nums[fast-1]) 
                         fast++;
                 }
             }
-            else {
+            else {                          // values are not equal at slow and fast, so keep copying and set flag to false
                 nums[++slow] = nums[fast++];
                 flag = false;
             }
