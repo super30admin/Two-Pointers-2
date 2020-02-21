@@ -1,11 +1,29 @@
 '''
-Time Complexity :O(n)
+Time Complexity :O(mlogn)
 Space Complexity: O(1)
 Did this code successfully run on Leetcode : Yes
 Explanation: Find if the vertical or horizontal is greater and iterate through the loops.
 Apply binary search on both the row and column and keep doing this till you find the element.
+
+Time Complexity :O(n)
+Space Complexity: O(1)
+Did this code successfully run on Leetcode : Yes
 '''
 class Solution:
+
+    def binarySearch(self, matrix, target):
+        row = len(matrix) - 1
+        col = 0
+
+        while row >= 0 and col <= len(matrix[0]) - 1:
+            if matrix[row][col] < target:
+                col += 1
+            elif matrix[row][col] > target:
+                row -= 1
+            else:
+                return True
+        return False
+
     def binarySearch(self, matrix, target, start, vertical):
         lo = start
         if vertical == True:
