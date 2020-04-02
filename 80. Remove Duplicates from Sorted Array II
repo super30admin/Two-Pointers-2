@@ -1,0 +1,36 @@
+Time complexity: O(n)
+Space complexity: O(1)
+Did this code got successfully submitted on leetcode: Yes
+
+class Solution {
+    public int removeDuplicates(int[] nums) {
+        
+        int i=1;
+        int count=1;
+        int length=nums.length;
+        
+        while(i<length){
+            if(nums[i]==nums[i-1]){
+                count++;
+                if(count>2){
+                    this.replaceElement(nums,i);
+                    i--;
+                    length--;
+                }
+            }
+            else{
+                count=1;
+            }
+            i++;
+        }
+        
+        return length;
+    }
+    
+    private int[] replaceElement(int[] arr, int id){
+        for(int i=id+1; i<arr.length;i++){
+            arr[i-1]=arr[i];
+        }
+        return arr;
+    }
+}
