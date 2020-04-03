@@ -1,0 +1,37 @@
+#TC:O(N)
+#SC:O(N)
+
+
+class Solution {
+    public void merge(int[] nums1, int t, int[] nums2, int q) 
+    {
+        
+        if(t==0)
+            for(int i=0;i<q;i++)
+                nums1[i]=nums2[i];
+        
+         else if(q==0)
+            for(int i=0;i<t;i++)
+                nums1[i]=nums1[i];
+        
+         else{ 
+        int k = t+q-1;
+        int m=t-1;
+        int n=q-1;
+        while(m>=0 && n>=0){
+            if(nums1[m]>=nums2[n]){
+                nums1[k--]=nums1[m--];
+            }
+            else
+                nums1[k--]=nums2[n--];
+              } 
+            
+          if(n>=0){
+             for(int i=0;i<=n;i++) 
+                nums1[i]=nums2[i];
+         
+        }
+         }
+
+    }
+}

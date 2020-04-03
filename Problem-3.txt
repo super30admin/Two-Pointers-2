@@ -1,0 +1,27 @@
+#TC : O(m+n)
+#SC : O(1)
+
+
+class Solution {
+    public boolean searchMatrix(int[][] matrix, int target) 
+    {   
+        if(matrix==null || matrix.length==0) return false;
+        int len = matrix.length;
+        int len1 = matrix[0].length-1;
+        int i=0;
+        int j=len1;
+        int k =0;
+        
+        while(i<len && j>=0)
+        {
+        if(target==matrix[i][j])
+            return true;
+        else if(target < matrix[i][j])
+            j--;
+        else if(target > matrix[i][j])
+              i++;
+        }
+        
+        return false;
+    }
+}
