@@ -1,0 +1,44 @@
+#TC:O(N)
+#SC:O(!)
+
+class Solution {
+    public int removeDuplicates(int[] nums)
+    {
+        int i=0;
+        int j=0;
+        int k=0;
+        int prev=0;
+        int prevj = 0;
+        int n = nums.length;
+        while(i<n && j<n)
+        {
+          if (nums[i]==nums[j])
+               j++;
+          else {
+            if((j-i)>2)
+                k+=2;
+            else
+                k+=(j-i);
+              
+              for(int t=prev;t<k;t++)
+                    nums[t]=nums[prevj];
+            i=j;
+            prevj = j;
+            prev=k;
+              
+          }
+        
+          
+        }
+         if((j-i)>2)
+                k+=2;
+            else
+                k+=(j-i);
+              
+              for(int t=prev;t<k;t++)
+                    nums[t]=nums[prevj];
+        
+        
+        return k;
+    }
+}
