@@ -1,0 +1,29 @@
+// Time Complexity :O(n) n is size of array
+// Space Complexity : O(1)
+// Did this code successfully run on Leetcode : Yes
+
+class Solution {
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+        
+        /* Actual array size of array A */
+        int i=m-1;
+        /* Actual size of array B */
+		int j=n-1;
+        /* size of merged array */
+		int k = m+n-1;
+        
+        /* keeping larger value at end */
+		while(i >= 0 && j >= 0)
+		{
+            /* whicever value is  greater at A or B is placed at new sorted array end and pointer are decreased */
+			if(A[i] > B[j])
+				A[k--] = A[i--];
+			else
+				A[k--] = B[j--];
+		}
+        
+        /* if values at array B are yet to be added to final array */
+		while(j >= 0)
+			A[k--] = B[j--];
+    }
+}
