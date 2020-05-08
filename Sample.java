@@ -40,10 +40,9 @@ class Sample {
         
     }
     
-    // Time Complexity :
-    // Space Complexity :
-    // Did this code successfully run on Leetcode :
-    // Three line explanation of solution in plain english
+    // Time Complexity : O(N)
+    // Space Complexity : O(1)
+    // Did this code successfully run on Leetcode : Yes
 
     // Problem 2
     /**
@@ -84,6 +83,42 @@ class Sample {
             k--;
         }
         
+        
+    }
+
+     // Time Complexity : O(R+C) R is number rows and C is number of columns
+    // Space Complexity : O(1)
+    // Did this code successfully run on Leetcode : Yes
+
+    // Problem 2
+    /**
+     * 1. Since array is sorted, we can compare the target value with the start of the rows and columns and
+     * proceed accordingly.
+     * 2. Take 2 pointers, one to travers through row and other through column.
+     * 3. We start from top-right corner of matrix. If value at particular position is less than target then 
+     * increment the row pointer else decrement the columd pointer.
+     */
+
+    public boolean searchMatrix(int[][] matrix, int target) {
+        
+        if(matrix == null || matrix.length == 0)
+            return false;
+        
+        int rows = matrix.length;
+        int columns = matrix[0].length;
+        
+        int r = 0, c = columns-1;
+        
+        while(r < rows && c >= 0) {
+            if(matrix[r][c] == target)
+                return true;
+            if(matrix[r][c] > target)
+                c--;
+            else
+                r++;
+        }
+        
+        return false;
         
     }
 }
