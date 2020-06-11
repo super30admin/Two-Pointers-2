@@ -3,7 +3,7 @@
 // Space Complexity : O(1)
 // Did this code successfully run on Leetcode : Yes
 
-// Apprach: We maintain a pointer for iterating through array upto n-2 and
+// Approach: We maintain a pointer for iterating through array upto n-2 and
 // another for replacing the number if it is present more than twice.
 
 // Your code here along with comments explaining your approach
