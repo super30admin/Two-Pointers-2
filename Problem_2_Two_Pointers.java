@@ -1,4 +1,4 @@
-// Time complexity - O(n)
+// Time complexity - O(m+n)
 // Space complexity - O(1)
 
 // Used two pointers at the last index of both the arrays and one pointer at the end of first array for insertion at right position. 
