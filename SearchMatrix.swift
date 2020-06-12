@@ -2,7 +2,8 @@
 // Space Complexity : (O)1
 // Did this code successfully run on Leetcode : yes
 // Any problem you faced while coding this : yes failed for test case [[-5]]-10, [[1,1]] 2. mistakenly taken m = matrix[0].count and n = matrix.count
-//
+//Search from top right since we can easily find in which direction we have to go. only tow options go left if number is smaller than the target else go bottom.
+
 class Solution {
     func searchMatrix(_ matrix: [[Int]], _ target: Int) -> Bool {
        //edge
