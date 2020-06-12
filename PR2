@@ -1,0 +1,32 @@
+// Time Complexity : O(m+n)
+// Space Complexity : O(1) - no extra space used.
+// Did this code successfully run on Leetcode : yes
+// Any problem you faced while coding this : I was a little confused about the differents test cases but noe it's clarified.
+
+
+// Your code here along with comments explaining your approach
+// Used a 3 pointer approach to keep a track of the additions 2 for the bigger array and 1 for the smaller array and merge them by comparing. 
+ 
+class Solution {
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+      int i=m-1;
+      int j=n-1;
+      int k=m+n-1;
+        while(i>=0 &&  j>=0){
+            if(nums1[i]>nums2[j]){
+                nums1[k]=nums1[i];
+                i--;
+            }
+            else{
+                nums1[k]=nums2[j];
+                j--;
+            }
+            k--;
+        }
+        while(j>=0){
+            nums1[k]=nums2[j];
+            j--;
+            k--;
+        }
+    }
+}
