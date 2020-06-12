@@ -1,5 +1,5 @@
 
-// Time Complexity : O max(m,n) --> where m & n are number of elements in the array nums1 & nums2 resp 
+// Time Complexity : O (m + n) --> where m & n are number of elements in the array nums1 & nums2 resp 
 // Space Complexity : O(1) --> in-place
 // Did this code successfully run on Leetcode (88): Yes
 // Any problem you faced while coding this : No
