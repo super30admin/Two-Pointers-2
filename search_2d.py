@@ -7,6 +7,7 @@ class Solution:
 		"""
 		row = len(matrix)-1
 		col = 0
+		#selecting the element last row, first col
 		while(row>-1 and col<len(matrix[0])):
 			if matrix[row][col]==target:
 				return True
