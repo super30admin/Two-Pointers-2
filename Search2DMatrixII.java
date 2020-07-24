@@ -1,3 +1,6 @@
+//TC: O(m+n), m: number of rows in matrix, n: number of columns in matrix
+//SC: O(1)
+
 class Solution {
     public boolean searchMatrix(int[][] matrix, int target) {
         if(matrix == null || matrix.length == 0 || matrix[0].length == 0) return false;
