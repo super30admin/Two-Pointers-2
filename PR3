@@ -1,0 +1,21 @@
+// Time Complexity : O(m+n) - given matrix m-rows,n-columns.
+// Space Complexity : O(1)
+// Did this code successfully run on Leetcode : yes
+// Any problem you faced while coding this : yes. Initially I didn't understand why to pick the top right or the bottom left corners. Additionally, I declared variables unnecessarily and missed the link between the variables.
+
+
+// Your code here along with comments explaining your approach
+
+class Solution {
+    public boolean searchMatrix(int[][] matrix, int target) {
+        if(matrix.length==0 || matrix==null) return false;
+        int m=matrix.length;int n=matrix[0].length;
+        int r=0;int c=n-1;
+        while(r<m && c>=0){
+                if(matrix[r][c]==target) return true;
+                else if(matrix[r][c]>target) c--;
+                else r++;
+                }
+        return false;
+    }
+}
