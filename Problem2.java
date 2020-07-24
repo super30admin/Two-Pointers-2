@@ -29,12 +29,16 @@ class Problem2 {
         int row= 0;
         int col = matrix[row].length-1;
 
+        // in range
         while(row< matrix.length && col>= 0){
 
+            // found
             if(matrix[row][col] == target)
                 return true;
+            // search in left-hand side
             else if(matrix[row][col] > target)
                 col--;
+            // search in bottom half
             else
                 row++;
         }
