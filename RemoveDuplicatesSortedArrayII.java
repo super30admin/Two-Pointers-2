@@ -1,3 +1,6 @@
+//TC: O(n), n: length of array
+//SC: O(1)
+
 class Solution {
     public int removeDuplicates(int[] nums) {
         int slow = 1;
