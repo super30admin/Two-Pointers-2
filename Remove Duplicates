@@ -1,0 +1,29 @@
+Approach 1 : Hashmap to store the count of values and itearte through a result array index and retrieve the values
+Time Complexity : O(n)+ nlog(n)= nlog(n) (Store in hashmap and retrive in an array and sort it)
+Space complexity : O(n)
+Approach 2 : Three Pointer Approach
+Time Complexity : O(n)
+Space Complexity : O(1)
+class Solution:
+    def removeDuplicates(self, nums: List[int]) -> int:
+        slow=1 ### indicator
+        prev=0
+        fast=1 ### Iterator
+        flag=0
+        while (fast<len(nums)):
+            if (nums[fast]==nums[prev]):
+                if (flag==0): ### First Duplicate
+                    nums[slow]=nums[fast]
+                    fast+=1
+                    slow+=1
+                    flag=1
+                else:
+                    fast+=1
+            else: ### Second/Third.. duplicates
+                prev=fast
+                nums[slow]=nums[fast]
+                fast+=1
+                slow+=1
+                flag=0
+        return slow
+            
