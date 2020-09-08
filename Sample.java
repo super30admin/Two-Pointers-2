@@ -64,25 +64,33 @@ class Solution {
 }
 
 // Problem 3 - Search a 2D Matrix II
-// Time Complexity : O(n )
+// Time Complexity : O(n + m)
 // Space Complexity : o(1)
 // Did this code successfully run on Leetcode : Yes
 // Three line explanation of solution in plain english
 
 // Your code here along with comments explaining your approach
+// Algorithm
+// 1 - initialize row index to last row and column to first
+// 2 - loop over matrix
+// 3 - if element found, return
+// 4 - if current element greater than target, move row, else column
 class Solution {
   public boolean searchMatrix(int[][] matrix, int target) {
     if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {
       return false;
     }
-
+    
+    // 1
     int row = matrix.length - 1;
     int column = 0;
-
+    
+    // 2
     while (row >= 0 && column < matrix[0].length) {
+      // 3
       if (matrix[row][column] == target) {
         return true;
-      } else if (matrix[row][column] > target) {
+      } else if (matrix[row][column] > target) { // 4
         row--;
       } else {
         column++;
