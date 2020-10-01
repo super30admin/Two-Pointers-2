@@ -1,0 +1,32 @@
+//time complexity: O(n)
+//space complexity: O(1)
+// we can overwrite the elements and get rid of duplicates of the element whose count is greater than 2;
+//since aar is sorted, duplicates are adjacent to each other
+// we will use this fact for our problem solving
+// we will maintain two pointers, one will find the next unique element we can have and other will help us to get the count of copies of that element
+// if count >= 2, then we overwrite the element twice, else if count == 1, we overwrite once
+class Solution {
+    public int removeDuplicates(int[] nums) {
+        int index = 0;
+        int i = 0;
+        int j = 0;
+        while(i < nums.length){
+              int count = 0;
+            while(j < nums.length && nums[i] == nums[j]){ 
+                j++;
+                count++;
+            }
+            if(count >= 2){
+                    nums[index++] = nums[i];
+                    nums[index++] = nums[i];
+                }
+            else if(count == 1){
+                nums[index++] = nums[i];
+            }
+            
+            i = j;
+            
+        }
+        return index;
+    }
+}

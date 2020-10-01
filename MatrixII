@@ -1,0 +1,23 @@
+//space complexity: O(1), TC: O(log n): binary search
+// we try to reduce our search space, using the property of matrix given in the problem statement
+class Solution {
+    public boolean searchMatrix(int[][] matrix, int target) {
+        if(matrix == null || matrix.length == 0) return false;
+        int m = matrix.length;
+        int n = matrix[0].length;
+         
+        int row = 0;
+        int col = n-1;
+       
+        while(row < m && col >= 0){
+            if(target < matrix[row][col]){
+                col--; 
+             }
+            else if(matrix[row][col] == target) return true;
+            else if(matrix[row][col] < target){
+                row++;
+            }
+        }
+        return false;
+    }
+}
