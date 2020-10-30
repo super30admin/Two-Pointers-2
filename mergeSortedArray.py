@@ -1,5 +1,9 @@
-
-
+'''
+Timecomplexity O(m+n)
+Spacecomplexity O(1)
+Did this code successfully run on Leetcode : Yes
+Any problem you faced while coding this : None
+'''
 
 class Solution:
     def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
@@ -9,6 +13,9 @@ class Solution:
         ptr1 = m-1
         ptr2 = n-1
         idx  =  m+n-1
+
+        #Iterate from the end of nums1 and nums2, compare the two elements and replace the last index of nums1
+
         while(ptr1>=0 and ptr2>=0):
             if nums1[ptr1] > nums2[ptr2]:
                 nums1[idx] =  nums1[ptr1]
@@ -17,6 +24,7 @@ class Solution:
                 nums1[idx] =  nums2[ptr2]
                 ptr2 -=1
             idx-=1
+        
         while ptr2>=0:
             nums1[idx] =  nums2[ptr2]
             ptr2 -=1
