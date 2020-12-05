@@ -1,4 +1,8 @@
-
+/**
+ * Leet - 80
+ * Time Complexity - O(N)
+ * Space Complexity - O(1)
+ */
 class Solution {
     public int removeDuplicates(int[] nums) {
         if(nums == null || nums.length == 0)
