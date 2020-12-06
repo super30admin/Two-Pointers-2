@@ -1,0 +1,45 @@
+// Time Complexity : O(m+n)
+// Space Complexity : O(1)
+// Did this code successfully run on Leetcode : Yes
+// Three line explanation of solution in plain english 
+
+/* Assign two pointers to the last elements in both arrays and one pointer to the last element in m+n array and 
+check which element is greater and place the largest element at the i pointer and move the pointers
+location until all the elements are placed.*/
+
+// Your code here along with comments explaining your approach
+
+class Solution {
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+        
+        if(nums1==null||nums1.length==0)
+            return;
+        
+        int i=m+n-1,p1=m-1,p2=n-1;      // setting p1 and p2 at last elements in arrays with i at the last element in the new added array
+        
+        while(p1>=0&&p2>=0)
+            
+        {
+            if(nums1[p1]>nums2[p2])         // when element at p1 is greater than at p2, push the element at p1 to the array
+            {
+                nums1[i]=nums1[p1];
+                 p1--;
+            }
+            else
+            {
+                nums1[i]=nums2[p2];
+                p2--;
+            }
+            i--;
+        }
+        while(p2>=0)
+        {
+            nums1[i]=nums2[p2];
+            p2--;
+            i--;
+        }
+        
+        
+        
+    }
+}
