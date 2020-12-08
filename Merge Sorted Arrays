@@ -1,0 +1,39 @@
+// Time Complexity : O(N)
+// Space Complexity : O(1)
+// Did this code successfully run on Leetcode : Yes
+// Three line explanation of solution in plain english: Idea is to use 3 pointer variables.
+// Two at end of both array with actual value and 3rd at the end of array 1(largest). Traverse twice to merge both the array.
+
+// Your code here along with comments explaining your approach:
+
+SOLUTION:
+class Solution {
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+        if(nums1==null || nums2==null || nums1.length==0 || nums2.length==0){
+            return;
+        }
+        
+        int p = m - 1;
+        int q = n - 1 ;
+        int largest = m + n - 1;
+        while(n>0 && m>0){
+            if(nums1[m-1]>nums2[n-1]){
+                nums1[largest] = nums1[m-1];
+                m--;
+                largest--;
+            }else {
+                nums1[largest] = nums2[n-1];
+                n--;
+                largest--;
+            }
+        }
+        
+      // Traversing again
+        for(int i = n-1 ; i >= 0 ; i--){
+            nums1[largest] = nums2[n-1];
+            n--;
+            largest--;
+        }
+
+    }
+}
