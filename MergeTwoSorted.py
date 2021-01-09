@@ -17,7 +17,7 @@
         This starts from the end.
         Keep two pointers to record their positions
         Copy the bigger element over to the finally sorted index, and move the pointer of the bigger element inwards towards 0.
-        If the second list (smaller list) hasn't reached the end, copy it elements too.
+        If the second list (smaller list) hasn't reached the end, copy its elements too.
 '''
 class Solution:
     def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
