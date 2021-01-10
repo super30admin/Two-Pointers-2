@@ -1,0 +1,39 @@
+
+// Time Complexity : O(m + n)
+// Space Complexity : O(1)
+// Did this code successfully run on Leetcode : yes
+// Three line explanation of solution in plain english
+
+// Your code here along with comments explaining your approach
+
+class Solution {
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+        //edge cases
+        if(nums1 == null || nums1.length == 0) return;
+        //set pointer
+        int p1 = m - 1;
+        int p2 = n - 1;
+        int index = (m+n) - 1;
+        //while loop looping through both arrays backwards until index 0;
+        while(p1 >= 0 && p2 >= 0){
+            //if p1 greater than then p2 put p1 at the back of nums1 array
+            if(nums1[p1] > nums2[p2]){
+                nums1[index] = nums1[p1];
+                p1--;
+            }
+            //if p2 is greater than p1 put p2 at the end of nums1 array
+            else{
+                nums1[index] = nums2[p2];
+                p2--;
+            }
+            //move nums1 index down one
+            index--;
+        }
+        //if the while loop up there finishes while nums2 hasn't finished loop through nums2 backwards and put them in the nums1 array for the remaning indicies
+        while(p2 >= 0){
+            nums1[index] = nums2[p2];
+            p2--;
+            index--;
+        }
+    }
+}

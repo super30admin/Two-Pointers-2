@@ -1,0 +1,31 @@
+
+// Time Complexity : O(m x n)
+// Space Complexity : O(1)
+// Did this code successfully run on Leetcode : yes
+// Three line explanation of solution in plain english
+
+// Your code here along with comments explaining your approach
+
+class Solution {
+    public boolean searchMatrix(int[][] matrix, int target) {
+        //pointers starting from top left
+        int i = 0;
+        int j = matrix[0].length - 1;
+        //edge cases
+        if(matrix.length == 0 || matrix == null) return false;
+        //loop until i and j go out of bounds
+        while(i < matrix.length && j >= 0){
+            //if its target return true
+            if(matrix[i][j] == target) return true;
+            //if target is smaller than current number move left (j--)
+            else if(matrix[i][j] > target) {
+                j--;
+            }
+            //if target is bigger than current elment move down (i++)
+            else{
+                i++;
+            }
+        }
+        return false;
+    }
+}

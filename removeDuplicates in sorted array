@@ -1,0 +1,36 @@
+
+// Time Complexity : O(n)
+// Space Complexity : O(1)
+// Did this code successfully run on Leetcode : yes
+// Three line explanation of solution in plain english
+
+// Your code here along with comments explaining your approach
+
+class Solution {
+    public int removeDuplicates(int[] nums) {
+        //edge case
+        if(nums == null || nums.length == 0) return 0;
+        //counter will check how many times an element occured
+        int count = 1;
+        //slow and fast poitner
+        int s = 1;
+        //int f = 1;
+        //have a loop that moves the fast pointer until length of the array
+        for(int f = 1; f < nums.length; f++){
+            //check if fast is equal to slow
+            if(nums[f] == nums[f-1]){
+                 count++;
+            }
+            else{
+                count = 1;
+            }
+            //if the count is less than 2 then you can have fast equal to slow
+            if(count <= 2){
+                    nums[s] = nums[f];
+                    //move up slow pointer
+                    s++;
+            }
+        }
+        return s;
+    }
+}
