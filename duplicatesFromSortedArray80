@@ -1,0 +1,24 @@
+class Solution {
+    public int removeDuplicates(int[] nums) {
+        
+        //Time Complexity is O(n)
+        //Space complexity is O(1)
+        if(nums.length==0 || nums== null)
+            return 0;
+        
+        int count=1;
+        int first=1;
+        for(int i =1;i < nums.length;i++){
+            if(nums[i]==nums[i-1])
+                count++;
+            else
+                count =1; //encountered new number
+            if(count <=2){
+            nums[first]=nums[i];
+            first++;
+            }
+               
+        }
+        return first;
+    }
+}
