@@ -1,4 +1,6 @@
-
+// Time Complexity : o(n)
+// Space Complexity : O(1)
+// Did this code successfully run on Leetcode : Yes
 public class MergeTwoArrays {
 	
 	    public void merge(int[] nums1, int m, int[] nums2, int n) {
