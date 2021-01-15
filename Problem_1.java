@@ -31,9 +31,35 @@ class Solution {
 }
 
 // Time Complexity :O(n)
-// Space Complexity :O(n)
+// Space Complexity :O(1)
 // Did this code successfully run on Leetcode :
 // Any problem you faced while coding this :
 
 
-// Below is the boor force approach for the question.In this I am using extra space as treemap to compute the array.
+class Solution {
+    public int removeDuplicates(int[] nums) {
+        if(nums.length==1){
+            return 1;
+        }
+        if(nums.length==2){
+            return 2;
+        }
+        
+        int slow=1;
+        int fast=1;
+        int count=1;
+        while(fast<nums.length){
+            if(nums[fast]==nums[fast-1]){
+                count=count+1;
+            }else{
+                count=1;
+            }
+            if(count<=2){
+                nums[slow]=nums[fast];
+                slow=slow+1;
+            }
+            fast=fast+1;
+        }
+        return slow;
+    }
+}
