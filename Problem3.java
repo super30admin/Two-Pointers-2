@@ -1,33 +1,28 @@
-// Time Complexity :O(nlogn)
+// Time Complexity :O(n)
 // Space Complexity :O(1)
 // Did this code successfully run on Leetcode :yes
 // Three line explanation of solution in plain english
-    //Binary search across all rows.
-    //
+    //Movinf left if targetis amller and movinf down if it is greater.
 
 // Your code here along with comments explaining your approach
 class Solution {
     public boolean searchMatrix(int[][] matrix, int target) {
-        int r=0;
+        if(matrix==null || matrix.length==0)
+            return false;
+        
+        int r=matrix.length;
         int c = matrix[0].length-1;
-     for(int i=0;i<matrix.length;i++)
-     {
-         int low= 0;
-         int high= c;
-         if(target>=matrix[i][low] && target<=matrix[i][high])
-         {
-             while(low<=high)
-             {
-                 int mid=(low+high)/2;
-                 if(matrix[i][mid]==target)
-                     return true;
-                 else if(matrix[i][mid]>target)
-                     high=mid-1;
-                 else
-                     low=mid+1;
-             }
-         }
-     }
+        int i=0;int j=c;
+        while(i<r && j>=0)
+        {
+            if(matrix[i][j]==target)
+                return true;
+            else if(matrix[i][j]>target)
+                j--;
+            else
+                i++;
+        }
         return false;
+    
     }
 }
