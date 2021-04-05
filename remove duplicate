@@ -1,0 +1,37 @@
+// Time Complexity : O(n)
+// Space Complexity : O(1)
+// Did this code successfully run on Leetcode : yes
+// Three line explanation of solution in plain english
+slow and fast count =1 
+if fast-1 == fast count++ else count =1 
+if count <=2 shift elments to left p1++
+// Your code here along with comments explaining your approach
+class Solution {
+    public int removeDuplicates(int[] nums) {
+        int count =1;
+        
+        int p1 = 1, p2 = 1;
+        
+        while(p2 < nums.length)
+        {
+            //equal 
+            if(nums[p2-1] == nums[p2])
+            {
+                count++;
+            }
+            else //not equal
+            {
+                count=1;
+            }
+            if(count <=2)
+            {
+                nums[p1] = nums[p2];
+                p1++;
+            }
+                  
+            p2++;
+        }
+        return p1;
+    }
+    
+}
