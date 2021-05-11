@@ -1,6 +1,8 @@
 
 /*
-Desc: using a count variable we count the number of occurences of an element using fast pointerand 
+Desc: using a count variable we count the number of occurences of an element using fast 
+pointer and skip the rest above 2 counts, and using a slow pointer we enter
+the next different element in the array until count reahces 2.
 Time  Complexity : O(n)
 Space Complexity : O(1)
 */
