@@ -1,23 +1,14 @@
-//lomuto partition,
-//I can also use pigeonhole sort for same purpose, but this works in same number of passes
-
-//O(n) is TC
-//O(1) is SC
+//2 pointers with i & count
+//O(n) + O(1) solution
+//this works because we go through all numbers and gets the size
+//if we mutilate array without using extra array (void funcn), that'd be O(n^2)
 class Solution {
 public:
-    //simple route
-    void sortColors(vector<int>& nums) {
-       int i=-1;
-       for(int j=0;j<nums.size();++j){
-           if(nums[j]==0){
-               swap(nums[++i],nums[j]);
-           }
-       }
-        int count =i;
-        for(int k=0;k<nums.size();++k){
-           if(nums[k]==1){
-               swap(nums[++count],nums[k]);
-           }
-       }
+    int removeDuplicates(vector<int>& nums) {
+        int n = nums.size(), count = 0;
+    for (int i = 2; i < n; i++)
+        if (nums[i] == nums[i - 2 - count]) count++;
+        else nums[i - count] = nums[i];
+    return n - count;
     }
 };
