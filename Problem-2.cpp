@@ -1,25 +1,19 @@
-//3sum
+//LC easy
 
-//T.C: O(n^2)
-//SC = O(1)
-//Sort + 2 pointer,
-//we can use hashmap for same purpose as in K-sum at expense of space
-class Solution{
+//O(n) + O(1) asked to me at citi bank
+class Solution {
 public:
-vector<vector<int>> threeSum(vector<int>& nums) {
-    vector<vector<int>> triples;
-    sort(nums.begin(), nums.end());
-    int i = 0, last = nums.size() - 1;
-    while (i < last) {
-        int a = nums[i], j = i+1, k = last;
-        while (j < k) {
-            int b = nums[j], c = nums[k], sum = a+b+c;
-            if (sum == 0) triples.push_back({a, b, c});
-            if (sum <= 0) while (nums[j] == b && j < k) j++;
-            if (sum >= 0) while (nums[k] == c && j < k) k--;
+    void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
+        int i=m-1,j=n-1,k=m+n-1;
+        while(i>=0&&j>=0){
+            if(nums1[i]>nums2[j]) 
+                nums1[k--] = nums1[i--];
+            else
+                nums1[k--] = nums2[j--];
         }
-        while (nums[i] == a && i < last) i++;
+        while(j>=0){
+            nums1[j] = nums2[j];
+            j--;
+        }
     }
-    return triples;
-}
 };
