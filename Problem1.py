@@ -1,39 +1,24 @@
-# Time Complexity : O(n**2)
+# Time Complexity : O(n)
 # Space Complexity : O(1)
-# Did this code successfully run on Leetcode : No
-# Any problem you faced while coding this : Something is missing in the code
+# Did this code successfully run on Leetcode : Yes
+# Any problem you faced while coding this : No
+
+#using slow and fasyt pointer and reaplcing the values of the fast and slow pointer
+#if count crosses 2 or any k for that matter
 
 class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
         if len(nums) == 0:
             return 0
-        l = len(nums)
-        pres = nums[0]
+        n = len(nums)
+        s,f=1,1
         count = 1
-        i = 1
-        
-        while i < l:
-            if nums[i] == pres:
+        for f in range(1,len(nums)):
+            if nums[f] == nums[f-1]:
                 count += 1
-                i += 1
             else:
-                diff = count - 2
-                if diff > 0:
-                    j = i
-                    while j < l:
-                        nums[j-diff] = nums[j]
-                        j+=1
-                    i = i - diff + 1
-                    l = l - diff
-                    while diff > 0:
-                        nums[l+diff-1] = pres
-                        diff -= 1
-                    pres = nums[i]
-                    count = 1
-                else:
-                    pres = nums[i]
-                    count = 1
-                    i += 1
-                
-        return l
-                        
+                count = 1
+            if count <= 2:
+                nums[s] = nums[f]
+                s += 1
+        return s
