@@ -1,4 +1,4 @@
-// TC: O(m + n)
+// TC: O(m * n) If rightShift has to be applied at every element
 // SC: O(1)
 class Solution {
     private void rightShift(int[] nums1, int m, int start) {
