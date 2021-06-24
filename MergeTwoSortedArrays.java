@@ -1,15 +1,13 @@
 /**
 Problem: Merge two sorted arrays.
-Time Complexity: O(m+n) where m is the size of the first array, and n is the size of the second array.
+
+Time Complexity: O(m+n) 
 Space Complexity : O(1)
 Did it run on Leetcode: Yes
 
 Approach: 3 Pointers
-1. Let the first pointer point to the end of the first array and the second pointer to the end of the second array.
-2. We also make use of an indicator pointer, which points to the fact that elements after it are sorted.
-3. At every point, we compare the two pointers, and place the maximum of those two in the indicator position and decrement the indicator pointer.
-4. After doing this, if the first pointer runs out, we directly copy the elements present in the second array into the first array.
-5. Thus, we have a merged and sorted array at the end.
+
+
  */
 
 
