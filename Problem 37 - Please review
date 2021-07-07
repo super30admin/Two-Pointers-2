@@ -1,0 +1,31 @@
+// Time Complexity :O(m+n) where m and n are rows and columns
+// Space Complexity :O(1)
+// Did this code successfully run on Leetcode :Yes
+
+
+class Solution {
+    func searchMatrix(_ matrix: [[Int]], _ target: Int) -> Bool {
+        //base condition
+        if(matrix.count == 0 || matrix[0].count == 0) {
+            return false
+        }
+        let rows = matrix.count
+        let cols = matrix[0].count
+        
+        var rowStart = 0
+        var colStart = cols - 1
+        
+        while (rowStart < rows && colStart >= 0) {
+            if(target < matrix[rowStart][colStart]) {
+                colStart -= 1
+            }
+            else if (target > matrix[rowStart][colStart]) {
+                rowStart += 1
+            }
+            else {
+                return true
+            }
+        }
+        return false
+    }
+}

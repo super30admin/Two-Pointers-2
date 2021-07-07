@@ -1,0 +1,28 @@
+// Time Complexity :O(m+n)
+// Space Complexity :O(1)
+// Did this code successfully run on Leetcode :Yes
+
+class Solution {
+    func merge(_ nums1: inout [Int], _ m: Int, _ nums2: [Int], _ n: Int) {
+        
+        if n == 0 { return }
+        if m == 0 { 
+            nums1 = nums2
+            return
+        }
+        
+        // part of nums1 we need
+        nums1 = Array(nums1[0..<m])
+        
+        //use index1, index2 to record indices of each arrs; both start from end index
+        var index1 = m-1, index2 = n-1
+        while index1 >= 0, index2 >= 0 {
+            while index1 >= 0, nums1[index1] > nums2[index2] { index1 -= 1 }
+            if index1 == -1 { break } // when out of bound of nums1
+            nums1.insert(nums2[index2], at: index1+1)
+            index2 -= 1
+        }
+        
+        if index2 >= 0 { nums1 = Array(nums2[0...index2]) + nums1 }  
+    }
+}
