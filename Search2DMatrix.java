@@ -1,17 +1,23 @@
 class Solution {
-    public int removeDuplicates(int[] nums) {
+    public boolean searchMatrix(int[][] matrix, int target) {
 
-        int p0 = 0;
-        int p1 = 1;
+        //we can also start from top right corner
+        int row = matrix.length - 1;
+        int col = 0;
 
-        for (int i=0; i<nums.length; i++) {
-            if (nums[p0] == nums[p1]) {
-                if (nums[p1 + 1] == nums[p0]) {
-                    p0++;
-                }
+        while (row >= 0 && col < matrix[0].length) {
+
+            if (matrix[row][col] > target) {
+                row--;
+            } else if (matrix[row][col] < target) {
+                col++;
+            } else {
+                return true;
             }
+
         }
-        return p0;
+
+        return false;
 
     }
 }
