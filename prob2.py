@@ -1,7 +1,7 @@
-# Time Complexity : O(max(m, n))
+# Time Complexity : O(N)
 # Space Complexity : O(1) as no extra space
-# Did this code successfully run on Leetcode : 40/59 test cases
-# Any problem you faced while coding this : i did not get the logic completely correct
+# Did this code successfully run on Leetcode : yes
+# Any problem you faced while coding this : No
 
 
 def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
@@ -14,7 +14,7 @@ def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
         p = m + n - 1
         while p1 >= 0 and p2 >= 0:
             
-            if nums1[p1] >= nums2[p2]:
+            if nums1[p1] > nums2[p2]:
                 nums1[p] = nums1[p1]
                 p1 -= 1
             else:
@@ -22,7 +22,7 @@ def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
                 p2 -= 1
             p -= 1
         
-        if p2 >= 0:
-            nums1[:p] = nums2[:p2]
-        # if p1 >= 0:
-        #     nums1[:p] = nums1[:p1]
+        while p2 >= 0:
+            nums1[p] = nums2[p2]
+            p2 -= 1
+            p -= 1
