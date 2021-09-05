@@ -1,4 +1,30 @@
 // Time Complexity : O(m + n)
+// Space Complexity : O(1)
+// Did this code successfully run on Leetcode : Yes
+// Three line explanation of solution in plain english
+// take 3 pointers one for two arrays and and 1 form the end of the array, then start from the end of the array till its zero th index and swap if they are big value is found.
+// Your code here along with comments explaining your approach
+class Solution {
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+        int i = (m-1), j = (n-1), k= (m+n-1);
+        while( i >= 0 && j >= 0){
+            if(nums1[i] > nums2[j]){
+                nums1[k] = nums1[i];
+                i--;
+            }else{
+                nums1[k] = nums2[j];
+                j--;
+            }
+            k--;
+        }
+        while(j>=0){
+            nums1[k] = nums2[j];
+            k--; j--;
+        }
+    }
+}
+/*
+// Time Complexity : O(m + n)
 // Space Complexity : O(m + n)
 // Did this code successfully run on Leetcode : Yes
 // Three line explanation of solution in plain english
@@ -33,3 +59,4 @@ class Solution {
         }
     }
 }
+*/

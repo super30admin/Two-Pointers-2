@@ -1,3 +1,31 @@
+// Time Complexity : O(n)
+// Space Complexity : O(1)
+// Did this code successfully run on Leetcode : yes
+// Three line explanation of solution in plain english
+// same as the old approach just need to set swep insted of doing anything else if the count is grater then 2
+// Your code here along with comments explaining your approach
+class Solution {
+    public int removeDuplicates(int[] nums) {
+        if( nums == null || nums.length == 0) return 0;
+        int i = 1, j = 1, count = 1;
+        while( j < nums.length){
+            // increase the counter if both the values are same
+            if( nums[j] == nums[j-1]){
+                count++;
+            }else{
+                // reset the counter if the count
+                count=1;
+            }
+            if( count < 3){
+                nums[i] = nums[j];
+                i++;
+            }
+            j++;
+        }
+        return i;
+    }
+}
+/*
 // Time Complexity : O(nlogn)
 // Space Complexity : O(1)
 // Did this code successfully run on Leetcode : yes
@@ -14,13 +42,13 @@ class Solution {
                 if( j-i > 1){
                     // to handle 0
                     if(nums[j] == 0){
-                        nums[j] = 1000;
-                        // to handle -ve values
+                       nums[j] = 1000;
+                    // to handle -ve values
                     }else if( nums[j] < 0){
                         nums[j] = nums[j]*(-1000);
                     }
                     else{
-                        nums[j] = nums[j]*1000;
+                       nums[j] = nums[j]*1000;
                     }
                 }
                 j++;
@@ -39,3 +67,5 @@ class Solution {
         return (n-ans);
     }
 }
+*/
+
