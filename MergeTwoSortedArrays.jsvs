@@ -1,0 +1,29 @@
+class Solution {
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+        int size = nums1.length;
+        
+        //first -->end of 1st array element
+        //second -->end of 2nd array element
+        ///index --> last of 1st array
+        
+        int first = m-1,second = n-1,index = size-1;
+        if(m==0){
+            while(second>=0){
+                nums1[index] = nums2[second];
+                second--;
+                index--;
+            }
+            return;
+        }
+        while(second>=0){
+            if(first>=0 && nums1[first]>=nums2[second]){
+                nums1[index] = nums1[first];
+                first--;
+            }else{
+                nums1[index] = nums2[second];
+                second--;   
+            }
+            index--;
+        }
+    }
+}
