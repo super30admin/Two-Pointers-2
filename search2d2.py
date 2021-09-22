@@ -1,5 +1,5 @@
-# Time Complexity: O(), 
-# Space Complexity: O(), 
+# Time Complexity: O(m+n), in the worst case, we'll go from bottom to the top row and from the left most to the right most element, i.e. m+n. 
+# Space Complexity: O(1), We don't use any additional auxiliary data structure in the size of m or n. 
 def searchMatrix(m: list[list[int]], target: int) -> bool:
     if not m or len(m) == 0:
         return False
