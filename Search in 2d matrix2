@@ -1,0 +1,30 @@
+class Solution {
+    public boolean searchMatrix(int[][] matrix, int target) {
+        if(matrix.length==0 && matrix[0].length==0 ||matrix==null) return false;
+        
+        int r = matrix.length; //row 
+        int c = matrix[0].length; //col
+        
+        int i = 0;//row
+        int j = c-1;//col
+        
+        while(i<r && j>=0){
+            if(target==matrix[i][j]) return true;
+            if(target>matrix[i][j])
+                {
+                i++;
+                }
+            else if(target<matrix[i][j])
+                {
+                    j--;
+                }
+        }
+        
+        return false;
+    }
+}
+
+//time : O(n+m)
+//space:O(n+m)
+//ran successfully on leetcode please check time and space complexity
+//prblem faced while implementing 2 pointer before class after class it was clear
