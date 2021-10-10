@@ -30,3 +30,5 @@ class Solution {
 
 //time :O(n+m) iterating both loops together n and m arrays.
 //space : O(1)
+//ran successfully
+//before class tried with merging 2 arrays and than sorting it with 2 pointer but was not as optimize as this
