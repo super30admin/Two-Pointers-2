@@ -1,0 +1,33 @@
+class Solution{
+	public boolean searchMatrix(int[][] matrix, int target){
+		
+		if (matrix == null || matrix.length ==0){
+			return false;
+		}
+		
+		int m = matrix.length - 1;
+		int n = matrix[0].length -1;
+		
+		int curr_row = 0;
+		int curr_col = n;
+		
+		while(curr_row <=m && curr_col >=0){
+		
+			if (target == matrix[curr_row][curr_col]){
+				return true;
+			}
+			else if(target < matrix[curr_row][curr_col]){
+				curr_col--;
+			}
+			else{
+				curr_row++;
+			}
+		
+		}
+		return false;
+	}
+}
+
+// TC = O(m)
+// SC = O(1)
+
