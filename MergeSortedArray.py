@@ -14,7 +14,7 @@ class Solution:
         index = m + n - 1
 
         while (ptr1 >= 0 and ptr2 >= 0):
-            if nums1[ptr1] >= nums2[ptr2]:
+            if nums1[ptr1] >= nums2[ptr2]: # For equal elements, add elements from array 1 itself.
                 nums1[index] = nums1[ptr1]
                 ptr1 -= 1
             elif nums1[ptr1] < nums2[ptr2]:
@@ -22,6 +22,7 @@ class Solution:
                 ptr2 -= 1
             index -= 1
 
+        # if arr1 is traversed but arr2 elements still needs to be added
         while ptr2 >= 0:
             nums1[index] = nums2[ptr2]
             ptr2 -= 1
