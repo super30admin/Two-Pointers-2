@@ -1,7 +1,4 @@
 
-// Time Complexity :
-// Space Complexity :
-// Did this code successfully run on Leetcode :
-// Three line explanation of solution in plain english
+// Explained the approach and complexities in the questions please review
 
-// Your code here along with comments explaining your approach
+
