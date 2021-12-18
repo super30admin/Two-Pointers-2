@@ -40,4 +40,21 @@ public class RemoveDuplicatesFromSortedArray {
         // this j will be the count of the elements filled after removing duplicates
         return j;
     }
+
+    public int removeDuplicates2(int[] nums) {
+        if(nums.length == 1) {
+            return 1;
+        }
+        int i = 0;
+        for(int num : nums) {
+            // as the array is sorted, we are checking 2 indices back if the current element is greater
+            // if it is greater, then we copy the elements and move i forward
+            // otherwise we remain it as is
+            if(i < 2 || num>nums[i-2]) {
+                nums[i++] = num;
+            }
+        }
+        // at last i will be done filling it, and it will have the number of elements
+        return i;
+    }
 }
