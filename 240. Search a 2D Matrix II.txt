@@ -1,0 +1,26 @@
+
+// Time Complexity : O(m+n)
+// Space Complexity : O(1)
+// Did this code successfully run on Leetcode : yes
+// Three line explanation of solution in plain english
+//We know that columns and rows are sorted, we can ue binary search on ech row but that would be n*logm
+//we know at top right and bottom eft elements on the bothe sides are either greater or smaller, we can use this info
+//to rech towards our target by choosing right direction..if we go out of bound we return false
+// Your code here along with comments explaining your approach
+class Solution {
+    public boolean searchMatrix(int[][] matrix, int target) {
+        int row=0;
+        int col=matrix[0].length-1;
+        
+        while(row<=matrix.length-1 && col>=0){
+            if(matrix[row][col]==target){
+                return true;
+            }else if(matrix[row][col]<target){
+                row++;
+            }else{
+                col--;
+            }
+        }
+        return false;
+    }
+}

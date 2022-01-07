@@ -1,0 +1,40 @@
+
+// Time Complexity : O(m+n)
+// Space Complexity : O(1)
+// Did this code successfully run on Leetcode : yes
+// Three line explanation of solution in plain english
+
+// Your code here along with comments explaining your approach
+
+//as we want to avoid the overhead of shifting elements to right. we start from the right of the nums 1 array
+//whenever we find the bigger element we store it at last which we maintain using p3 here
+//we did this if both pointers are >0..if we finish p2 that means we are done. if we are out of while that menas any one pointer is exhausted..if we exhaust p1 then we are alrady good and if we exhaust p2 that means we have transfered all
+//elements from nums2 if we are yet to traverse nums2 completely nut have some elements in nums2 and all done with nums1, 
+//we will tansfer all elements from nums2 to nums1
+class Solution {
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+        int p1 = m-1;
+        int p2=n-1;
+        
+        int p3=m+n-1;
+        
+        while(p1>=0 && p2>=0){
+        if(nums1[p1]>=nums2[p2]){
+            nums1[p3]=nums1[p1];
+            p1--;
+            p3--;
+        }else{
+            nums1[p3]=nums2[p2];
+            p3--;
+            p2--;
+        }
+        
+    }
+        
+        while(p2>=0){
+            nums1[p3]=nums2[p2];
+            p2--;
+            p3--;
+        }
+}
+}
