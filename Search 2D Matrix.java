@@ -6,6 +6,7 @@
 class Solution {
     public boolean searchMatrix(int[][] matrix, int target) {
         
+        // check if input matrix is null or empty
         if(matrix == null || matrix.length == 0) return false;
         
         // find number of rows and columns of input matrix
