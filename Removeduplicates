@@ -1,0 +1,24 @@
+//tc: O(n)
+//sc:O(1)
+//passed all testcases on leetcode: yes
+class Solution {
+    public int removeDuplicates(int[] nums) {
+        if (nums==null || nums.length == 0) return 0; // null condition
+        //i & j start from the same position, in order to be valid for j-1 (without going to ou tof bounds error) i,j are taken as 1; 
+        int counter = 1; //since the first element will always exist, counter is also 1
+        int i =1; 
+        int j= 1; 
+        while (j<nums.length) {
+        if (nums[j] == nums[j-1]) {
+            counter++;
+        }
+        else counter = 1; //if prev & curr ele are not equal, reset the counter
+        if (counter<=2) {
+            nums[i] = nums[j]; //this is imp when j falls on a diff element != i.  replace ith element with jth element
+            i++;
+        }
+        j++;
+        }
+        return i;
+    }
+}
