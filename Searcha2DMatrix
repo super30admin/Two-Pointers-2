@@ -1,0 +1,18 @@
+//tc: O(m+n)
+//sc:O(1)
+//accepted on leetcode: yes
+class Solution {
+    public boolean searchMatrix(int[][] matrix, int target) {
+        if (matrix==null|| matrix.length == 0) return false;
+        int i = 0;
+        int j = matrix[0].length-1; //starting from either corner other than starting and ending so that one side elements are greater, one side smaller
+        while (i<matrix.length && j>=0) { 
+            if (matrix[i][j] >target) {
+                j--; // if target is smaller, it will be on the left of element so decreasing column
+            } else if (matrix[i][j] <target) {
+                i++; // if target is greater, it will be in the down part of element, so increasing row
+            } else return true;
+        }
+        return false;
+    }
+}
