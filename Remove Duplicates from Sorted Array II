@@ -1,0 +1,35 @@
+// Time Complexity : check below
+// Space Complexity :check below
+// Did this code successfully run on Leetcode : yes
+// Any problem you faced while coding this : no
+
+Solution -
+
+class Solution {
+    public int removeDuplicates(int[] nums) {
+        int i = 1, j = 1;
+        int count = 1;
+        
+        while(j < nums.length)
+        {
+            if(nums[j] == nums[j - 1])
+            {
+                count++;
+            }
+            else
+            {
+                count = 1;
+            }
+            
+            if(count <= 2)
+            {
+                nums[i++] = nums[j];
+            }
+            j++;
+        }
+        return i;
+    }
+}
+
+Tc - O(n)   n - size of array
+Sc - O(1)
