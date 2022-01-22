@@ -15,6 +15,7 @@ class Solution {
         int ptr2=n-1;
         int i=nums1.length-1;
         
+        //ptr1 and ptr2 should have && condition, such that neither ptr1 and ptr2 neither should be going negative;
         while(ptr1>=0 && ptr2>=0){
             if(nums1[ptr1]>nums2[ptr2]){
                 nums1[i]=nums1[ptr1];
