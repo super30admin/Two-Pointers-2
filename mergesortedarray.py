@@ -23,6 +23,38 @@ class Solution:
         """
         Do not return anything, modify nums1 in-place instead.
         """
+
+        # boundaries for arrays
+        i = m-1
+        j = n-1
+        k = len(nums1) - 1
+        
+        # while array elements present
+        while i >= 0 and j >= 0:
+            
+            # if current element in each array is less than the other, add to nums1
+            # adjust pointers accordingly
+            if nums1[i] < nums2[j]:
+                nums1[k] = nums2[j]
+                j -= 1
+                k -= 1
+            
+            # if current element is greater thenn add to nums1 to be compared again
+            # adjust pointers accordingly
+            else:
+                nums1[k] = nums1[i]
+                i -= 1
+                k -= 1
+                
+        # in the end if there are few elements left in an array, merge and add again 
+        # adjust pointers accordingly
+        while j >= 0:
+            nums1[k] = nums2[j]
+            j -= 1
+            k -= 1
+
+
+        """
         low = 0
         high = 0
         i = 0
@@ -40,9 +72,7 @@ class Solution:
             else:
                 nums1[i] = nums2[high]
                 high += 1
-                
-
-            """
+            
             Another approach but giving wrong answer:
 
             if nums1[low] < nums2[high] and nums1[low+1] >= nums2[high]:

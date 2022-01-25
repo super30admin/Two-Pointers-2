@@ -15,7 +15,7 @@ You must do this by modifying the input array in-place with O(1) extra memory.
 
 """
 
-# Time Complexity : O(n2)
+# Time Complexity : O(n)
 # Space Complexity : O(1)
 # Did this code successfully run on leetCode : Yes
 # Any problem you faced while coding this :  No
@@ -26,23 +26,29 @@ class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
         
         i = 1
-        k = 1
-
-        while i < len(nums):
-
-            if nums[i] == nums[i-1]:
-                k += 1
-
-                if k > 2:
-                    nums.pop(i) # tried using remove() but it didnt work because Remove() removes first matching element
-                    
-                    # pop will remove an element so need to decrement to get back to prior position
-                    i -= 1 # 
-                    
+        j = 1
+        
+        # if counter > 1 then there are duplicates
+        # if counter = 1 then there are no dupllicates
+        counter = 1
+        
+        
+        while j < len(nums):
+            
+            # increase counter if duplicates found
+            if nums[j] == nums[j-1]:
+                 counter += 1
+                
+            # if not found, keep it set to 1
             else:
-                k = 1
-
-            i += 1
-
-        # since we are popping elements, len(nums) = number of elements after reomoving duplicates
-        return len(nums)
+                counter = 1
+                
+            # if there are duplicates, move to next pointer after updating elements
+            if counter <= 2:
+                
+                nums[i] = nums[j]
+                i+= 1
+            
+            j += 1
+        
+        return i
