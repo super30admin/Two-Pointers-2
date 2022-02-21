@@ -1,5 +1,5 @@
 // space complexity - o(1)
-  //time - o(n+m)
+  //time - o(n+m) where n = number of row and m = number of columns
   //Ran on leeetcode successfully : Yes
   // Problem faced  : No
   //Approach : start at the left bootom or top right because one side will be smaller than the other, based on the cell value

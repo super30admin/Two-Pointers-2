@@ -1,7 +1,7 @@
 class Solution {
 
   // space complexity - o(1)
-    //time - o(n+m)
+    //time - o(n+m)  where n = length of nums1 and m = length of nums2
     //Ran on leeetcode successfully : Yes
     // Problem faced  : No
     //Approach : Merge from the end of both the ararys, greater of two will go in the last index of nums1
