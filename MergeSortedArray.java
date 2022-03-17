@@ -2,7 +2,7 @@
 // Space Complexity : O(1)
 // Did this code successfully run on Leetcode : Yes
 // Three line explanation of solution in plain english
-Two pointers from the end comparing and inserting the max of the 2 elements in nums1 & nums2
+//Two pointers from the end comparing and inserting the max of the 2 elements in nums1 & nums2
 
 // Your code here along with comments explaining your approach
 class MergeSortedArray {
