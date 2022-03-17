@@ -1,0 +1,16 @@
+//Time Complexity O(n)
+//Space Complexity O(1)
+//Leetcode tested
+public class RemoveDuplicateFromSortedArrayTwo {
+    public int removeDuplicates(int[] nums) {
+        if(nums.length < 3) return nums.length;
+        int in=2;
+        for (int i = 2; i < nums.length; i++) {
+            if(nums[i] != nums[in-2]){
+                nums[in]=nums[i];
+                in++;
+            }
+        }
+        return in;
+    }
+}
