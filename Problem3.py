@@ -1,4 +1,4 @@
-# Time Complexity: O(m+n)
+# Time Complexity: O(row+col)
 # Space Complexity: O(1)
 # Did this code successfully run on Leetcode : YES
 class Solution(object):
