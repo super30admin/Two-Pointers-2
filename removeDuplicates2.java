@@ -6,24 +6,24 @@ SC: O(1)
 class Solution {
     public int removeDuplicates(int[] nums) {
         if (nums == null || nums.length == 0) {
-            return 0;
+            return -1;
         }
         
+        int slow = 1, fast = 1;
+        int count = 1;
         
-        int nd = 0, count = 1;
-        
-        for (int i = 1; i < nums.length; ++i) {
-            if (nums[i] == nums[i-1]) {
+        for (fast = 1; fast < nums.length; ++fast) {
+            if (nums[fast] == nums[fast - 1]) {
                 ++count;
             } else {
                 count = 1;
             }
             
             if (count <= 2) {
-                nums[++nd] = nums[i];
+                nums[slow++] = nums[fast];
             }
         }
-        return nd + 1;
+        return slow;
     }
 }
 /**
