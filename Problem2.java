@@ -34,5 +34,4 @@ public class Problem2 {
         problem2.merge(nums1, 3, nums2, 3);
 //        System.out.println("Final value " + Arrays.toString(result));
     }
-
 }
