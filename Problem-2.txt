@@ -1,0 +1,38 @@
+
+// Time Complexity :O(m+n)
+// Space Complexity :O(1)
+// Did this code successfully run on Leetcode : Yes
+// Three line explanation of solution in plain english
+
+// Your code here along with comments explaining your approach
+//using two pointer
+
+class Solution {
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+        if(nums1 == null || nums1.length ==0 && nums2 == null || nums2.length==0) return;
+        
+        int r1 = m-1;
+        int r2 = n-1;
+        int r3 = m+n-1;
+        
+        while(r1>=0 && r2>=0)
+        {
+            if(nums1[r1] >nums2[r2])
+            {
+                nums1[r3] = nums1[r1];
+                r1--;
+            }
+            else{
+                nums1[r3] = nums2[r2];
+                r2--;
+            }
+            r3--;
+        }
+        while(r2>=0)
+        {
+            nums1[r3]= nums2[r2];
+            r2--;
+            r3--;
+        }
+    }
+}
