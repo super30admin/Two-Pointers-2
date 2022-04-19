@@ -11,6 +11,6 @@
 
 //problem1.java has O(n) time complexity and O(1) space complexity
 
-//problem1.java has O(m+n) time complexity and O(1) space complexity
+//problem2.java has O(m+n) time complexity and O(1) space complexity
 
 //problem3.java has O(m+n) time complexity and O(1) space complexity
