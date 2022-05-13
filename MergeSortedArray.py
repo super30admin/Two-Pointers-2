@@ -1,3 +1,5 @@
+#time complexity: O(n)
+#Space complexity: O(1)
 class Solution:
     def merge(self, nums1, m: int, nums2, n: int) -> None:
         """

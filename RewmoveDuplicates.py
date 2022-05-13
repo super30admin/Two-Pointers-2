@@ -1,3 +1,5 @@
+#time complexity: O(n)
+#Space complexity: O(1)
 class Solution:
     def removeDuplicates(self, nums) -> int:
         low=1
