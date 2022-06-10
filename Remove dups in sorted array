@@ -1,0 +1,27 @@
+// time - O(n)
+// space - O(1)
+// yes
+// explanation - check adjacent numbers by traversal and keep a count of the number of similar elements. if the new element is found reset the count.
+// Position ptr only stores new elements till the count is < k. k here is 2.
+
+class Solution {
+    public int removeDuplicates(int[] nums) {
+        int position = 1, k=2, count=1;
+        for(int i=1; i< nums.length; i++){
+            if(nums[i]==nums[i-1]){
+                count++;
+            }
+            else{
+                count=1;
+            }
+            
+            if(count <=k){
+                nums[position] = nums[i];
+                position++;
+            }
+            
+        }
+        return position;
+        
+    }
+}
