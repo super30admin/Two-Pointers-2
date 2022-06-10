@@ -109,3 +109,41 @@ class Solution {
         return slow;
     }
 }
+//****SORT COLORS****
+//TIME complexity:o(n);
+//SPACE complexity:o(1);
+//Leetcode runnable:Y
+class Solution {
+    public void sortColors(int[] nums) {
+        int high=nums.length-1;
+        int low=0;
+        int mid=0;
+        //low->0
+        //mid->1
+        //high->2
+        
+        while(mid<=high)
+        {
+            if(nums[mid]==1)
+            {
+                mid++;
+            }
+            else if(nums[mid]==0)
+            {
+                int temp=nums[mid];
+                nums[mid]=nums[low];
+                nums[low]=temp;
+                low++;
+                mid++;
+            }
+            else
+            {
+               int temp=nums[mid];
+                nums[mid]=nums[high];
+                nums[high]=temp;
+                high--;
+            }
+        }
+        
+    }
+}
