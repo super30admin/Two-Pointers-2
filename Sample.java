@@ -37,3 +37,42 @@ class Solution {
         
     }
 }
+//****SEARCH IN 2D MATRIX-2****
+//TIME complexity:o(m+n);
+//SPACE complexity:o(1);
+//Leetcode runnable:Y
+class Solution {
+    public boolean searchMatrix(int[][] matrix, int target) {
+        int m = matrix.length;
+        int n=matrix[0].length;
+        if(matrix==null || matrix.length==0)
+        {
+            return false;
+        }
+        
+        int i=0;
+        int j=n-1;
+        
+        while(i<m && j>=0)
+        {
+            if(matrix[i][j]==target)
+            {
+                return true;
+            }
+            //if less go to left
+            else if(matrix[i][j]>target)
+            {
+                j--;   
+            }
+            //if more, go down
+            else
+            {
+                i++;
+            }
+        }
+        
+        return false;
+        
+        
+    }
+}
