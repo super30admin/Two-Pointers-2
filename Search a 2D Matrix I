@@ -1,3 +1,22 @@
+Solution 1 - Brute force - 
+TC - O(m * n)
+SC - O(1)
+
+class Solution {
+    public boolean searchMatrix(int[][] matrix, int target) {
+        for(int i = 0; i < matrix.length; i++)
+        {
+            for(int j = 0; j < matrix[0].length; j++)
+            {
+                if(matrix[i][j] == target)
+                    return true;
+            }
+        }
+        return false;
+    }
+}
+
+------------------------------------------------------
 
 Solution - Considering 2d as 1d array and finding mid the getting indexes of that mid in 2darray and applying binary search
           TC - O(log(m * n)) = O(log m) + O(log n)   where m - row size, n - col size of matrix
