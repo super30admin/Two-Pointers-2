@@ -23,7 +23,47 @@ class Solution {
 
 -------------------------------------------------
 
-Solution 2- Considering 2d as 1d array and finding mid the getting indexes of that mid in 2darray and applying binary search
+Solution 2- Performing binary search on all rows
+TC - O(m log n) or O(n log m)
+SC - O(1)
+
+class Solution {
+    public boolean searchMatrix(int[][] matrix, int target) {
+        
+        for(int i = 0; i < matrix.length; i++)
+        {
+            if(binarySearch(matrix[i], 0, matrix[i].length - 1, target))
+                return true;
+            
+        }
+        return false;
+    }
+    
+    public boolean binarySearch(int[] a, int start, int end, int target)
+    {
+        while(start <= end)
+        {
+            int mid = start + (end - start)/2;
+            if(a[mid] == target)
+                return true;
+            else if(target < a[mid])
+            {
+                end = mid - 1;
+            }
+            else
+            {
+                start = mid + 1;
+            }
+        }
+        return false;
+    }
+}
+
+
+
+-------------------------------------------------
+
+Solution 3 - Considering 2d as 1d array and finding mid the getting indexes of that mid in 2darray and applying binary search
           TC - O(log(m * n)) = O(log m) + O(log n)   where m - row size, n - col size of matrix
           SC - O(1)
 
