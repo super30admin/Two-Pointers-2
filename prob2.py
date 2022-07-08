@@ -20,3 +20,6 @@ class Solution:
             p2 -= 1
             p3 -= 1
             
+
+#TC ==> 0(m+m)
+#SC ==> 0(1)
