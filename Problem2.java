@@ -1,6 +1,6 @@
 // Time Complexity : O(m + n) where m = nums1.length and n = nums2.length
 // Space Complexity : O(1)
-// Did this code successfully run on Leetcode :
+// Did this code successfully run on Leetcode : Yes
 // Problem: https://leetcode.com/problems/merge-sorted-array/
 
 class Solution {
