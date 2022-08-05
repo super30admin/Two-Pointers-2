@@ -1,3 +1,6 @@
+// Time Complexity : O(m+n)
+// Space Complexity : O(1)
+// Did this code successfully run on Leetcode : yes
 class Solution {
     public void merge(int[] nums1, int m, int[] nums2, int n) {
         int tail1 =m-1;
