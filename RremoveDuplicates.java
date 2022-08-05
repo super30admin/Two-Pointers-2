@@ -1,3 +1,6 @@
+// Time Complexity : O(n)
+// Space Complexity : O(1)
+// Did this code successfully run on Leetcode : yes
 class Solution {
     public int removeDuplicates(int[] nums) {
        if (nums == null || nums.length==0) return 0;
