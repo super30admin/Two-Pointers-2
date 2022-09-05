@@ -7,6 +7,10 @@ The final sorted array should not be returned by the function, but instead be st
 
 
 """
+"""
+Time Complexity: O(m+n)
+Space Complexity: O(1)
+"""
 
 
 def merge(nums1, m, nums2, n):

@@ -4,6 +4,10 @@ Write an efficient algorithm that searches for a value target in an m x n intege
 Integers in each row are sorted in ascending from left to right.
 Integers in each column are sorted in ascending from top to bottom.
 """
+"""
+Time Complexity: O(m+n)
+Space Complexity: O(1)
+"""
 
 
 def search_matrix(matrix, target):

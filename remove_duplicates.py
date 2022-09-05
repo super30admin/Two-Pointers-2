@@ -10,6 +10,11 @@ Do not allocate extra space for another array. You must do this by modifying the
 
 """
 
+"""
+Time Complexity: O(n)
+Space Complexity: O(1)
+"""
+
 
 def remove_duplicates(nums):
     count = 1
