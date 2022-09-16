@@ -1,5 +1,5 @@
 """
-S30 FAANMG Problem #39 {Medium}
+ FAANMG Problem #39 {Medium}
 
 80. Remove Duplicates from Sorted Array II
 

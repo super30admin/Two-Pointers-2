@@ -1,5 +1,5 @@
 """
-S30 FAANMG Problem #38 {Medium}
+ FAANMG Problem #38 {Medium}
 
 240. Search a 2D Matrix II
 
@@ -44,7 +44,7 @@ class Solution:
         return False
     
 """
-S30 FAANMG Problem #38 {Medium}
+ FAANMG Problem #38 {Medium}
 
 240. Search a 2D Matrix II
 

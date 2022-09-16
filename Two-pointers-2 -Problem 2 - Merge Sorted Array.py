@@ -1,5 +1,5 @@
 """
-S30 FAANMG Problem #37 {Easy}
+ FAANMG Problem #37 {Easy}
 
 88. Merge Sorted Array
 
