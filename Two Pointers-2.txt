@@ -1,0 +1,60 @@
+All test cases passed
+Remove Duplicates from Sorted Array II
+class Solution:
+    def removeDuplicates(self, nums: List[int]) -> int:
+        if len(nums)==1:
+            return 1
+        i=1
+        j=1
+        count=1
+        while j<len(nums):
+            if nums[j]==nums[j-1]:
+                count=count+1
+            else:
+                count=1
+            if count<=2:
+                nums[i]=nums[j]
+                i=i+1
+                j=j+1
+            else:
+                j=j+1
+        return i
+                
+Merge Sorted Array
+class Solution:
+    def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
+        """
+        Do not return anything, modify nums1 in-place instead.
+        """
+        j=m+n-1
+        i=m-1
+        k=n-1
+        while i>=0 and k>=0:
+            if nums1[i]>=nums2[k]:
+                nums1[j]=nums1[i]
+                j=j-1
+                i=i-1
+            else:
+                nums1[j]=nums2[k]
+                j=j-1
+                k=k-1
+        while k>=0:
+            nums1[j]=nums2[k]
+            k=k-1
+            j=j-1
+        
+Search a 2D Matrix II
+class Solution:
+    def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
+        m=len(matrix)
+        n=len(matrix[0])
+        i=0
+        j=len(matrix[0])-1
+        while i<m and j>=0:
+            if target<matrix[i][j]:
+                j=j-1
+            elif target>matrix[i][j]:
+                i=i+1
+            else:
+                return True
+        return False
