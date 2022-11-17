@@ -1,3 +1,4 @@
+Problem 88- merge sorted array
 
 // Time Complexity :O(m+n)
 // Space Complexity :constant
@@ -38,5 +39,47 @@ class Solution {
             p2--;
         }
         
+    }
+}
+
+
+
+
+
+
+
+
+
+
+Problem 240- Search in s 2d matrix II
+
+// Time Complexity :O(mlogn)
+// Space Complexity :constant
+// Did this code successfully run on Leetcode :yes
+
+class Solution {
+    public boolean searchMatrix(int[][] matrix, int target) {
+        
+        int row,column;
+        row=matrix.length;
+        column=matrix[0].length;
+        int r=0;
+        int c=column-1;
+        while(r<row && c>=0)
+        {    
+            if(matrix[r][c]==target)
+            {
+                return true;
+            }
+            else if(matrix[r][c]<target)
+            {
+                r++;
+            }
+            else
+            {
+                c--;
+            }
+        }
+            return false;
     }
 }
