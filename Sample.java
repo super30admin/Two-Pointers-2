@@ -83,3 +83,40 @@ class Solution {
             return false;
     }
 }
+
+
+
+
+
+Problem 80- remove duplicates from sorted array
+
+// Time Complexity :O(n)
+// Space Complexity :constant
+// Did this code successfully run on Leetcode :yes
+
+class Solution {
+    public int removeDuplicates(int[] nums) {
+        int p1=1;
+        int p2=1;
+        int count=1;
+        
+        for(p1=1; p1<nums.length; p1++)
+        {
+            if(nums[p1]==nums[p1-1])
+            {
+                count++;
+            }
+            else
+            {
+                count=1;
+            }
+            if(count<=2)
+            {
+                nums[p2]=nums[p1];
+                p2++;
+            }
+        }
+        return p2;
+        
+    }
+}
