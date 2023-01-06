@@ -1,0 +1,33 @@
+// Time Complexity : o(n +m)
+// Space Complexity : o(1)
+// Did this code successfully run on Leetcode : yes
+// Any problem you faced while coding this : no
+
+
+// Your code here along with comments explaining your approach
+/*
+* Start from top right
+* if equal to target then return
+* if greater than target go left else go down
+* */
+
+class Solution {
+    public boolean searchMatrix(int[][] matrix, int target) {
+        int n = matrix.length-1;
+        int m = matrix[0].length-1;
+
+        int i = 0;
+        int j = m;
+
+        while(i<=n && j>=0){
+            if(matrix[i][j] < target){
+                i++;
+            } else if(matrix[i][j]> target){
+                j--;
+            } else {
+                return true;
+            }
+        }
+        return false;
+    }
+}
