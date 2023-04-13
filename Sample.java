@@ -9,7 +9,6 @@ class Solution:
                 nums[i] = n
                 i += 1
         return i
-
 Merge Sorted Array
 Time complexcity :0(m+n)
 space complexcity : 0(1)
