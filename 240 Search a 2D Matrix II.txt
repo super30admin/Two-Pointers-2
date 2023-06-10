@@ -1,0 +1,21 @@
+240. Search a 2D Matrix II
+
+class Solution {
+    TC= O(m+n) SC= O(1)
+    public boolean searchMatrix(int[][] matrix, int target) {
+        int i=matrix.length-1;
+        int j=0;
+
+        while(i=0 && jmatrix[0].length){
+            if(matrix[i][j]target){
+                i--;
+            }else if(matrix[i][j]target){
+                j++;
+            }else{
+                return true;
+            }
+        }
+        return false;
+        
+    }
+}
