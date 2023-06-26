@@ -13,4 +13,4 @@ class Solution:
             if (count <= 2):
                 slow += 1
                 nums[slow] = nums[fast]
-        return slow + 1
+        return slow + ``1
