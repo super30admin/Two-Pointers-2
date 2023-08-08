@@ -1,0 +1,30 @@
+# // Time Complexity : O(m+n)
+# // Space Complexity : O(1)
+# // Did this code successfully run on Leetcode : Yes
+
+class Solution:
+    def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
+        #Method 1 - Starting from Top-Right corner
+        # m=len(matrix)
+        # n=len(matrix[0])
+        # r=0
+        # c=n-1
+        # while 0<=r<m and 0<=c<n:
+        #     if matrix[r][c]==target:
+        #         return True
+        #     elif matrix[r][c]<target: #Current element is smaller than target, so go in the direction of bigger elements -> next row
+        #         r+=1
+        #     else:
+        #         c-=1  #Current element is bigger than target, so go in the direction of smaller elements -> next col
+        #Method 2 - Starting from Bottom-Left corner
+        m=len(matrix)
+        n=len(matrix[0])
+        r=m-1
+        c=0
+        while 0<=r<m and 0<=c<n:
+            if matrix[r][c]==target:
+                return True
+            elif matrix[r][c]>target:   #Current element is bigger than target, so go in the direction of smaller elements -> next row 
+                r-=1
+            else:               #Current element is smaller than target, so go in the direction of bigger elements -> next col
+                c+=1 
