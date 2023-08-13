@@ -1,0 +1,23 @@
+Intuition: start from last row last column, top right or bottom left
+Two pointer solutions : based on single decision - which side to move - one side the numbers are increasing and on the other side the numbers are decreasing
+TC = O(m+n)
+class Solution {
+    public boolean searchMatrix(int[][] matrix, int target) {
+        //null
+        if(matrix == null || matrix.length == 0) return false;
+        int m = matrix.length; int n = matrix[0].length;
+        int i = 0; int j = n-1; //first row and last column
+        while( i < m && j >=0){  //i being increased and j is being decreased
+            if(matrix[i][j] == target) return true;
+            else if(matrix[i][j] < target){
+                i++;
+            } else{
+                j--;
+            }
+
+
+
+        }
+        return false;
+    }
+}
