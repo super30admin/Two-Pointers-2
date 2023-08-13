@@ -1,0 +1,25 @@
+Intuition: Don't interfere with the order of the two arrays. So place the pointers from the end. Also, start filling the first array from the end so that later when we override the initial part of the first array, its values are already taken care of.
+TC : O(m+n)
+
+class Solution {
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+        int p1 = m-1;
+        int p2 = n-1;
+        int idx = m+n-1;
+        while(p1>=0 && p2 >= 0){
+            if(nums1[p1]>=nums2[p2]){
+                nums1[idx] = nums1[p1];
+                p1--; 
+            }else{
+                nums1[idx] = nums2[p2];
+                p2--;
+            }
+            idx--;
+        }
+        while(p2>=0){
+            nums1[idx] = nums2[p2];
+            p2--;
+            idx--;
+        }
+    }
+}
