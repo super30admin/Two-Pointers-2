@@ -1,8 +1,8 @@
 # ## Problem2 (https://leetcode.com/problems/merge-sorted-array/)
 
-# // Time Complexity :
-# // Space Complexity :
-# // Did this code successfully run on Leetcode :
+# // Time Complexity :O(m + n)
+# // Space Complexity :O(1)
+# // Did this code successfully run on Leetcode :Yes
 # // Three line explanation of solution in plain english
 
 # // Your code here along with comments explaining your approach
@@ -12,7 +12,9 @@ class Solution:
         p1 = m - 1
         p2 = n - 1
         idx = m + n - 1
+        # iterating over the 2 arrays
         while (p1 >= 0 and p2 >= 0):
+            # Finding the maximum and replacing it at end of nums1
             if nums1[p1] >= nums2[p2]:
                 nums1[idx] = nums1[p1]
                 p1 -= 1
@@ -20,6 +22,7 @@ class Solution:
                 nums1[idx] = nums2[p2]
                 p2 -= 1
             idx -= 1
+        # if nums 2 left then adding it
         while p2 >= 0:
             nums1[idx] = nums2[p2]
             idx -= 1

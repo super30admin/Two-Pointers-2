@@ -1,8 +1,8 @@
 # ## Problem1 (https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/)
 
-# // Time Complexity :
-# // Space Complexity :
-# // Did this code successfully run on Leetcode :
+# // Time Complexity :O(n)
+# // Space Complexity :O(1)
+# // Did this code successfully run on Leetcode :Yes
 # // Three line explanation of solution in plain english
 
 # // Your code here along with comments explaining your approach
