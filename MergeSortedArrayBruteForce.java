@@ -4,18 +4,15 @@ class MergeSortedArrayBruteForce {
     //SC will be O(1)
 
     public void merge(int[] nums1, int m, int[] nums2, int n) {
-        if(nums1 == null || nums1.length==0){   //base Condn
-            return;
-        }
 
-        if(nums2 == null || nums2.length==0){
+        if(nums2 == null || nums2.length==0){ //Base cond to check nums2 is empty means nums1 is already sorted.
             return;
         }
 
         int i=0;        //pointer for nums1 array.
         int j=0;        //pointer for nums2 array.
         int k=0;        // pointer for sorted result array.
-        int[] result = new int[m+n]; //array to store stored elements
+        int[] result = new int[m+n]; //array to store sorted elements
 
 
         while(i<m && j<n)       //travering through nums1 and nums2
