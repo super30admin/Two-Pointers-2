@@ -1,4 +1,6 @@
 class Solution:
+     # Time Complexity : O(n) where n is number of elements in the List nums
+    # Space Complexity: O(1)
     def removeDuplicates(self, nums: List[int]) -> int:
         # If the list is empty return 0
         if nums is None or len(nums)==0:
