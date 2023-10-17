@@ -3,7 +3,8 @@
 // Space Complexity : O(1)
 // Did this code successfully run on LeetCode : Yes
 // Any problem you faced while coding this : No
-
+//Time complexity : O(m+n)
+//Space complexity : O(1)
 //Approach  Since the matrix rows and columns are sorted in ascending order
 // start the search from top-right or bottom-left to search optimally and check.  If the target == top-right then return
 // ture.  If target is less than top-right element then it cannot be in that column reduce the column by 1 and if

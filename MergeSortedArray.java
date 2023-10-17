@@ -6,7 +6,10 @@
 //Approach: Since both arrays are sorted and nums1 is already have enough space for nums2 data, create 2 pointers pointing to
 //actual data of nums1 (using m-1) and nums2 (using n-1) compare the elements copy them to nums1.  Make sure to copy the
 //leftover elements from nums2 to num1.
-
+//Time Complexity : O(n)
+// Space Complexity : O(1)
+//Approach: we will use 2 pointers starting at the end of the 2 arrays and compare the values.  Copy the larger element
+//at the end of the nums1.  If there are any remaining elements at nums2 we copy them to nums1
 public class MergeSortedArray {
     public static void merge(int[] nums1, int m, int[] nums2, int n) {
         int i =  m-1;
