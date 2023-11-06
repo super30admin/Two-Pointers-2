@@ -39,6 +39,9 @@ class Solution2 {
         int i=0;
 
         for(int num: nums){
+
+            // we will override the [i] with current number only for the first two elements OR
+            // when current number is not the same as the number before 2 positions
             if(i<2 || nums[i-2]!=num){
                 nums[i]=num;
                 i++;
