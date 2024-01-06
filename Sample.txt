@@ -1,0 +1,30 @@
+Problem: Merge Sorted Arrays
+Time Complexity : O(n)
+Space Complexity : O(1)
+Did this code successfully run on Leetcode : Yes
+Any problem you faced while coding this : No
+
+Your code here along with comments explaining your approach
+We keep 3 pointer two at the end of both array and 1 at the end of the result, thus comparing the last elements we add
+the elements from behind sorted the array as we reach to the start.
+
+Problem: Remove Duplicates From Sorted Array
+Time Complexity : O(n)
+Space Complexity : O(1)
+Did this code successfully run on Leetcode : Yes
+Any problem you faced while coding this : No
+
+Your code here along with comments explaining your approach
+We keep two pointer "slow" to keep track of where the element needs to be added and other "i" to keep track of the next
+unique element. We iterate over the list and stop the slow pointer once we are done adding the unique elem and i pointer
+to iterate and get the next unique element
+
+Problem: Search in 2D matrix
+Time Complexity : O(n)
+Space Complexity : O(1)
+Did this code successfully run on Leetcode : Yes
+Any problem you faced while coding this : No
+
+Your code here along with comments explaining your approach
+We take a pivot element where on the one side of the elem the values decrease and on the other side the value increase
+to make our traversal better in order to find the target
