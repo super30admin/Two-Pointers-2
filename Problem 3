@@ -1,0 +1,28 @@
+# Tc: O(m+n)
+# Sc: O(1)
+# Approach: The algorithm starts from the top-right corner of the matrix and iteratively compares the current element with the target. 
+# If the current element is equal to the target, the search is successful. 
+# If the current element is greater than the target, it moves left to explore smaller values. 
+# If the current element is less than the target, it moves down to explore larger values. 
+# The process continues until the target is found or the search goes out of bounds.
+
+
+class Solution:
+    def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
+        if not matrix or not matrix[0]:
+            return False
+
+        rows, cols = len(matrix), len(matrix[0])
+        row, col = 0, cols - 1  # Starting from the top-right corner
+
+        while row < rows and col >= 0:
+            current_value = matrix[row][col]
+
+            if current_value == target:
+                return True
+            elif current_value > target:
+                col -= 1  # Move left
+            else:
+                row += 1  # Move down
+
+        return False
