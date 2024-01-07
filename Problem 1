@@ -1,0 +1,24 @@
+# Approach: The algorithm uses two pointers and a count variable to iterate through the array, modifying it in-place to keep at most two occurrences of each unique element.
+# TC:O(n)
+# Sc:O(1)
+
+class Solution:
+    def removeDuplicates(self, nums: List[int]) -> int:
+        if not nums:
+            return 0
+
+        k = 0  # Index for the result array
+        count = 1  # Counter for occurrences of the current element
+
+        for i in range(1, len(nums)):
+            if nums[i] == nums[k]:
+                if count < 2:
+                    k += 1
+                    nums[k] = nums[i]
+                    count += 1
+            else:
+                k += 1
+                nums[k] = nums[i]
+                count = 1
+
+        return k + 1
