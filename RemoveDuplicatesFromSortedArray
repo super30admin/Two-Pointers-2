@@ -1,0 +1,28 @@
+
+/**
+Two Pointer
+Count occurences and once reaches k capacity replace wih next value;
+
+TC-O(n), SC=O(1)
+ */
+class Solution {
+    public int removeDuplicates(int[] nums) {
+       int count=0;
+       int slow =0;
+        int k =2;
+        for(int fast =0;fast<nums.length;fast++){
+            //count value occurences
+            if(fast==0||nums[fast]==nums[fast-1]){
+                count++;
+            }else {
+                count=1;
+            }
+            // Once we reach more than k(here it is 2) replace with next value;
+            if(count<=k){
+                nums[slow++]=nums[fast];
+            }
+
+        }
+    return slow;
+    }
+}
