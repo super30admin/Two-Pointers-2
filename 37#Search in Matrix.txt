@@ -1,0 +1,26 @@
+// Time Complexity : O(m+n)
+// Space Complexity : O(1)
+// Did this code successfully run on Leetcode : Yes
+
+class Solution {
+    public boolean searchMatrix(int[][] matrix, int target) {
+        /* edge case */
+        if(matrix == null || matrix.length == 0) 
+            return false;
+        /* two pointers */
+        int i =0,j=matrix[0].length-1;
+        
+        while(i <matrix.length & j >=0)
+        {
+            /* value found */
+          if(matrix[i][j] == target) 
+              return true;
+          /* if value at current cell is less than target than increase row else decrease colmun*/
+          else if(matrix[i][j] < target)  i++;
+          else j--;
+        }
+        
+        /* value not found so return false by default */
+        return false;
+    }
+}
