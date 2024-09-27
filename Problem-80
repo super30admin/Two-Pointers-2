@@ -1,0 +1,57 @@
+/*
+
+Time Complexity: O(n);
+Space: O(1);
+LeetCode: Successful:
+
+Runtime: 1 ms, faster than 73.64% of Java online submissions for Remove Duplicates from Sorted Array II.
+Memory Usage: 37 MB, less than 100.00% of Java online submissions for Remove Duplicates from Sorted Array II.
+
+Approach:
+
+take last current index pointer.
+lastindex;
+
+take three pointers,
+prev1,prev and curr
+
+check if these three are equal, 
+if yes, continue and update these pointers.
+
+else:
+increment lastindex and put the current number there.
+
+
+
+*/
+
+class Solution {
+    public int removeDuplicates(int[] nums) {
+        
+        
+        
+        if(nums.length<3) return nums.length;
+        int prev1=nums[0];
+        int prev=nums[1];
+        int lastindex=1;
+        int result=2;
+        for(int i=2;i<nums.length;i++)
+        {
+            int curr=nums[i];            
+            if(curr==prev&&prev==prev1)
+            {
+                prev1=prev;
+                prev=curr;
+                continue;
+            }
+            prev1=prev;
+            prev=curr;
+            result++;
+            
+            lastindex++;
+            nums[lastindex]=curr;
+        }
+        
+        return result;
+    }
+}
