@@ -1,0 +1,81 @@
+//Time: O(n^2) outer loop upto n and inner loop of shiftelemnts upto n
+//space: O(1)
+class Solution {
+    public int removeDuplicates(int[] nums) {
+        if(nums==null || nums.length==0) return 0;
+        int count=1;
+        int l=nums.length;
+        for(int i=1;i<l;i++)
+        { 
+            if(nums[i]==nums[i-1])
+            {     
+                count++;
+            if(count>2)
+            {
+               shiftElements(nums,i);
+                //i will increment in loop so decrease here since its a new element position which needs to be checked
+                i--;
+                //length is decresed by 1 as we shifted 1 element and come over here, so keep track of it to return it atlast
+                l--;
+            }
+            }
+            else
+                count=1;
+        }
+        return l;
+        
+    }
+    
+    //shift 1 postion for length upto end
+    private int[] shiftElements(int[] nums, int index)
+    {
+       for (int i = index + 1; i < nums.length; i++) {
+            nums[i - 1] = nums[i];
+        }
+       return nums;  
+    }
+}
+
+//Time:O(n)
+//space: O(1)
+class Solution {
+     public int removeDuplicates(int[] nums) {
+        
+        //
+        // Initialize the counter and the second pointer.
+        //
+        int j = 1, count = 1;
+        
+        //
+        // Start from the second element of the array and process
+        // elements one by one.
+        //
+        for (int i = 1; i < nums.length; i++) {
+            
+            //
+            // If the current element is a duplicate, increment the count.
+            //
+            if (nums[i] == nums[i - 1]) {
+                
+                count++;
+                
+            } else {
+                
+                //
+                // Reset the count since we encountered a different element
+                // than the previous one.
+                //
+                count = 1;
+            }
+            
+            //
+            // For a count <= 2, we copy the element over thus
+            // overwriting the element at index "j" in the array
+            //
+            if (count <= 2) {
+                nums[j++] = nums[i];
+            }
+        }
+        return j;
+    }
+}
