@@ -1,0 +1,27 @@
+class Solution {
+    //Since it sorted:I can take advantage of 2 Pointer - Fast & Slow pointers ver
+    // loop O(n) : use slow pointer to catch the value that fast pointer is throwing untill k decrements to 0 and 
+    // Hash Map - preprocess O(n) to store frequency and O(n) to populate from the hashmap in ascending order upto to times / key
+
+    public int removeDuplicates(int[] nums) {
+        int n = nums.length;
+        int slow = 0;
+        int fast = 0;
+        int k = 2;
+
+        // loop with fast & slow pointer - 
+        while(fast < n){
+            
+            if(k>0){
+                nums[slow] = nums[fast];
+                slow++;
+                k--;
+            }
+            if(fast < n-1 && nums[fast] != nums[fast+1]){
+                k=2;
+            }
+            fast++;
+        }
+        return slow;
+    }
+}

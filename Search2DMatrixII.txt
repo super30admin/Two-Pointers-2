@@ -1,0 +1,25 @@
+class Solution {
+    //bruteforce approch - O(m*n)
+    //Search space reduction techniques (Binary search)
+    /* or By noticing the pattern that top-right/bottom-left corner its row has
+     all the elements less than it and and the column has elements grater than it */
+    public boolean searchMatrix(int[][] matrix, int target) {
+        int n = matrix.length;
+        int m = matrix[0].length;
+
+        int row = 0;
+        int column = m-1;
+        
+        // loop till we find the target and return it else ELEMENT NOT FOUND 
+        while(row < n && column >=0){
+            // target equals current element RETURN TRUE
+            if(target == matrix[row][column]) return true;
+            // target > current element 
+            else if (target > matrix[row][column]) row++;
+            // target less than current element 
+            else column--;
+        }
+        return false;
+    }
+}
+
