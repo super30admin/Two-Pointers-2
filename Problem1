@@ -1,0 +1,27 @@
+class Solution {
+    public int removeDuplicates(int[] nums) {
+        if(nums == null || nums.length == 0){
+            return 0;
+        }
+        //use 2 pointer, low will track atmost 2 each element, high traverse through the arr length  
+        int low = 0; 
+        int high = 0;
+        int count = 1;
+        while(low <= high && high<=nums.length-1){
+            //counting number of same element
+            if(high != 0 && nums[high] == nums[high-1]){
+                count++;
+            }
+            else{
+                count = 1;
+            }
+            if(count <= 2){
+                //low keeps changing only if numbers are 2 and then swap with other number till 2 count
+                nums[low] = nums[high];
+                low++;
+            }
+            high++;
+        }
+        return low;
+    }
+}                                                          
