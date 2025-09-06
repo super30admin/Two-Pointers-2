@@ -1,0 +1,33 @@
+// Time Complexity : O(n)
+// Space Complexity : O(1)
+// Did this code successfully run on Leetcode : Yes
+
+// Use 2 pointers one slow and a fast pointer to traverse through the array
+// Keep track of the count of the current number in the array
+// Swap values of slow and fast pointer when the count is less than or equal to 2
+// return the slow pointer 
+
+// Your code here along with comments explaining your approach
+
+class Solution {
+    public int removeDuplicates(int[] nums) {
+        int n = nums.length;
+        if(n <= 2)
+            return n;
+        int slow = 1;
+        int count = 1;
+        for(int i = 1; i < n; i++) {
+            // keep count of a number
+            if(nums[i] == nums[i-1])
+                count++;
+            // reset count if new number is found
+            else 
+                count = 1;
+            if(count <= 2) {
+                nums[slow] = nums[i];
+                slow++;
+            }
+        }
+        return slow;
+    }
+}

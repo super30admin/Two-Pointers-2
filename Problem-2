@@ -1,0 +1,40 @@
+// Time Complexity : O(m+n)
+// Space Complexity : O(1)
+// Did this code successfully run on Leetcode : Yes
+
+// Using 2 pointers starting from the last element of the 2 arrays, compare the values and populate the 1st array from the last index
+
+// Your code here along with comments explaining your approach
+
+class Solution {
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+        int p1 = m - 1;
+        int p2 = n - 1;
+        int index = m + n - 1;
+        while(p1 >= 0 && p2 >= 0) {
+            // the element in first index is greater
+            if(nums1[p1] > nums2[p2]) {
+                nums1[index] = nums1[p1];
+                p1--;
+            }
+            // the element in second array is greater or equal
+            else {
+                nums1[index] = nums2[p2];
+                p2--;
+            }
+            index--;
+        }
+        // insert any remaining elements in the 1st array
+        while(p1 >= 0) {
+            nums1[index] = nums1[p1];
+            index--;
+            p1--;
+        }
+        // insert any remaining elements in the 2nd array
+        while(p2 >= 0) {
+            nums1[index] = nums2[p2];
+            index--;
+            p2--;
+        }
+    }
+}
