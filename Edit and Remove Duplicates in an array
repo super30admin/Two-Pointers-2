@@ -1,0 +1,26 @@
+
+// Start slow and fast from index k since first k elements are always allowed.
+// Only copy current fast element to slow if it's different from the element k places behind.
+// This ensures each number appears at most k times in the result.
+
+// time o(n)
+//space o(1)
+class Solution {
+    public int removeDuplicates(int[] nums) {
+        
+        int k = 2;
+        int slow = k, fast = k;
+
+        while(fast < nums.length){
+           
+            if(nums[slow - k] != nums[fast]){
+                nums[slow] = nums[fast];
+                slow++;
+            }
+
+            fast++;
+        }
+
+        return slow;
+    }
+}
