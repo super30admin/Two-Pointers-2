@@ -1,0 +1,22 @@
+class Solution {
+public:
+    int removeDuplicates(vector<int>& nums) {
+        int count = 1;
+        int ptr2 = 1;
+        
+
+        for (int ptr1 = 1; ptr1 < nums.size(); ptr1++) {
+            if (nums[ptr1] == nums[ptr1-1]) {
+                count++;
+            } else {
+                count=1;
+            }
+
+            if (count <= 2) {
+                nums[ptr2] = nums[ptr1];
+                ptr2++;
+            }
+        }
+        return ptr2;
+    }
+};
