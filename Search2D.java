@@ -1,20 +1,19 @@
 public class Search2D {
     public boolean searchMatrix(int[][] m, int target) {
-
+        int rows = matrix.length;
+        int cols = matrix[0].length;
         int row = 0;
-        int col = m[0].length - 1;
-
-        while (row <= m.length - 1 && col >= 0) {
-            if (m[row][col] > target) {
-                col--;
-            } else if (m[row][col] < target) {
+        int col = cols-1;
+        while ((row>=0 && row<rows) && (col>=0 && col<cols)) {
+            if (target == matrix[row][col]) {
+                return true;
+            } else if (matrix[row][col] < target) {
                 row++;
             } else {
-                return true;
+                col--;
             }
         }
         return false;
     }
 }
-// O(m+n)
-// O(1)
+

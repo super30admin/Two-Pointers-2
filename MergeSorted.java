@@ -1,25 +1,20 @@
 public class MergeSorted {
     public void merge(int[] nums1, int m, int[] nums2, int n) {
-
-        int i = m - 1;
-        int j = n - 1;
-        int k = nums1.length - 1;
-
-        while (i >= 0 && j >= 0) {
-
-            if (nums1[i] > nums2[j]) {
-                nums1[k] = nums1[i];
-                i--;
+        int left = m-1;
+        int right = m+n-1;
+        int i = n-1;
+        while (i>=0 && left>=0) {
+            if (nums1[left] < nums2[i]) {
+                nums1[right] = nums2[i];
+                right--; i--;
             } else {
-                nums1[k] = nums2[j];
-                j--;
-            }
-            k--;
+                nums1[right] = nums1[left];
+                right--; left--;
+            } 
         }
-        while (j >= 0) {
-            nums1[k] = nums2[j];
-            k--;
-            j--;
+        while (i>=0) {
+            nums1[right] = nums2[i];
+            right--; i--;
         }
     }
 }
